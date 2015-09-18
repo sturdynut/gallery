@@ -1,0 +1,28 @@
+.page.ng-leave {
+  z-index: 9999;
+  -webkit-animation: fadeOut 1s ease;
+  animation: fadeOut 1s ease;
+}
+.page.ng-enter     {
+  z-index: 8888;
+  -webkit-animation: fadeIn 1s ease;
+  animation: fadeIn 1s ease;
+}
+
+@-webkit-keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1; }
+}
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1; }
+}
+
+@-webkit-keyframes fadeOut {
+  from { opacity: 1 }
+  to { opacity: 0; }
+}
+@keyframes fadeOut {
+  from { opacity: 1 }
+  to { opacity: 0; }
+}

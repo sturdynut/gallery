@@ -1,0 +1,135 @@
+@import '../base';
+
+.artist {
+  background-color: $white;
+  border-radius: 2px;
+  padding: 20px 0 0;
+  min-width: 291px;
+
+  .artist-name,
+  .artist-tagline {
+    font-family: $primaryFont;
+  }
+
+  .gallery-page & {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    background-color: transparent;
+    border-style: none;
+    border-radius: 0;
+    padding: 0;
+
+    .artist-name {
+      color: $white;
+      font-size: 4rem;
+      line-height: 1;
+      padding: 5px 10px 0;
+      display: block;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .landing-page & {
+    .artist-tagline {
+      font-size: 1.5rem;
+      padding: 20px 0;
+      opacity: 1;
+      position: static;
+    }
+
+    .artist-name {
+      color: $black;
+      font-size: 7rem;
+      letter-spacing: -16px;
+      margin-left: -16px;
+    }
+
+    .artist-logo {
+      display: block;
+      margin: 0 auto;
+      max-width: 190px;
+      opacity: 1;
+      position: static;
+    }
+
+    .artist-name,
+    .artist-tagline {
+      text-align: center;
+    }
+  }
+
+
+  // background-color: transparent;
+  // border-style: none;
+  // border-radius: 1px;
+  // padding: 0;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // transition: border, padding, top, left, transform 2s ease;
+  // transform: none;
+
+  // .artist-logo,
+  // .artist-tagline {
+  //   opacity: 0;
+  //   position: absolute;
+  // }
+
+  // .artist-name,
+  // .artist-tagline {
+  //   font-family: $primaryFont;
+  // }
+
+  // .artist-name {
+  //   color: $white;
+  //   padding: 0;
+  //   line-height: 5rem;
+  //   font-size: 6rem;
+  //   letter-spacing: 0;
+  //   margin-left: 0;
+  // }
+
+  // .page-lp ~ & {
+  //   background-color: $white;
+  //   border: 10px solid $black;
+  //   border-radius: 1px;
+  //   padding: 45px;
+  //   position: absolute;
+  //   top: 50%;
+  //   left: 50%;
+  //   transform: translate(-50%, -50%);
+
+  //   .artist-tagline {
+  //     font-size: 3rem;
+  //     padding: 20px 0;
+  //     opacity: 1;
+  //     position: static;
+  //   }
+
+  //   .artist-name {
+  //     color: $black;
+  //     font-size: 10rem;
+  //     letter-spacing: -18px;
+  //     margin-left: -18px;
+  //     padding: 20px;
+  //   }
+
+  //   .artist-logo {
+  //     display: block;
+  //     margin: 0 auto;
+  //     max-width: 240px;
+  //     opacity: 1;
+  //     position: static;
+  //   }
+
+  //   .artist-name,
+  //   .artist-tagline {
+  //     text-align: center;
+  //   }
+  // }
+}

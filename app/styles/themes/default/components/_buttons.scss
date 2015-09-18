@@ -1,0 +1,18 @@
+@import '../base';
+
+.btn-primary {
+  .landing-page & {
+    border-radius: 0;
+    padding: 0.6em 2em;
+    font-size: 1.6rem;
+    width: 100%;
+    margin: 20px 0 0;
+    letter-spacing: 3px;
+    font-family: $primaryFont;
+    color: $white;
+    background: -webkit-linear-gradient(right, $teal, $purple);
+    border: none;
+    border-top: 1px solid $black;
+    transition: all 0.3s;
+  }
+}

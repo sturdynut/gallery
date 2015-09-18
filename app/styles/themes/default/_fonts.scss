@@ -1,0 +1,12 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,100,900);
+
+@font-face {
+  font-family: OhmegaSans;
+  src: url("/styles/fonts/OhmegaSans-Regular.otf") format("opentype");
+}
+
+$primaryFont: OhmegaSans, sans-serif;
+$casualFont: Lato, sans-serif;
+
+$thinFont: 100;
+$boldFont: 900;
