@@ -12,18 +12,75 @@ angular
   .module('moxieApp', [
     'ngAnimate',
     'ngCookies',
-    'ngRoute',
+    'ui.router',
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/index.html',
-        controller: 'MainCtrl',
-        controllerAs: 'mc'
+  .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+
+    $locationProvider.html5Mode(true)
+
+    $urlRouterProvider.otherwise('/');
+
+    $stateProvider
+      .state('index', {
+        url: '/',
+        views: {
+          'lp': {
+            templateUrl: 'views/lp.html',
+            controller: 'LPCtrl',
+            controllerAs: 'lpc'
+          },
+          'gallery': {
+            templateUrl: 'views/gallery.html',
+            controller: 'GalleryCtrl',
+            controllerAs: 'gc'
+          },
+          'about': {
+            templateUrl: 'views/about.html',
+            controller: 'AboutCtrl',
+            controllerAs: 'ac'
+          }
+        }
       })
-      .otherwise({
-        redirectTo: '/'
-      });
+      .state('gallery', {
+        url: '/gallery',
+        views: {
+          'lp': {
+            templateUrl: 'views/lp.html',
+            controller: 'LPCtrl',
+            controllerAs: 'lpc'
+          },
+          'gallery': {
+            templateUrl: 'views/gallery.html',
+            controller: 'GalleryCtrl',
+            controllerAs: 'gc'
+          },
+          'about': {
+            templateUrl: 'views/about.html',
+            controller: 'AboutCtrl',
+            controllerAs: 'ac'
+          }
+        }
+      })
+      .state('about', {
+        url: '/about',
+        views: {
+          'lp': {
+            templateUrl: 'views/lp.html',
+            controller: 'LPCtrl',
+            controllerAs: 'lpc'
+          },
+          'gallery': {
+            templateUrl: 'views/gallery.html',
+            controller: 'GalleryCtrl',
+            controllerAs: 'gc'
+          },
+          'about': {
+            templateUrl: 'views/about.html',
+            controller: 'AboutCtrl',
+            controllerAs: 'ac'
+          }
+        }
+      })
   });
