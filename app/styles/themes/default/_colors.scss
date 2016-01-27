@@ -3,4 +3,8 @@ $white: #fff;
 $purple: #6A2185;
 $teal: #40E1C8;
 
+$highlight-color: $teal;
+$highlight-color-light: lighten($teal, 25%);
+$highlight-color-dark: darken($teal, 25%);
+
 $transWhite: transparentize($white, 0.6);

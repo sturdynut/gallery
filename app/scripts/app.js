@@ -42,45 +42,5 @@ angular
             controllerAs: 'ac'
           }
         }
-      })
-      .state('gallery', {
-        url: '/gallery',
-        views: {
-          'lp': {
-            templateUrl: 'views/lp.html',
-            controller: 'LPCtrl',
-            controllerAs: 'lpc'
-          },
-          'gallery': {
-            templateUrl: 'views/gallery.html',
-            controller: 'GalleryCtrl',
-            controllerAs: 'gc'
-          },
-          'about': {
-            templateUrl: 'views/about.html',
-            controller: 'AboutCtrl',
-            controllerAs: 'ac'
-          }
-        }
-      })
-      .state('about', {
-        url: '/about',
-        views: {
-          'lp': {
-            templateUrl: 'views/lp.html',
-            controller: 'LPCtrl',
-            controllerAs: 'lpc'
-          },
-          'gallery': {
-            templateUrl: 'views/gallery.html',
-            controller: 'GalleryCtrl',
-            controllerAs: 'gc'
-          },
-          'about': {
-            templateUrl: 'views/about.html',
-            controller: 'AboutCtrl',
-            controllerAs: 'ac'
-          }
-        }
-      })
+      });
   });

@@ -1,6 +1,7 @@
 @import '_colors';
 @import '_fonts';
 
+$default-gutters: 16px;
 $brand-primary: darken($purple, 6.5%);
 $btn-primary-color: $white;
 $btn-primary-bg: transparent;

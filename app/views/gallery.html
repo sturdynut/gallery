@@ -1,10 +1,42 @@
-<section class='gallery-page'>
+<section id='gallery' class='gallery-page'>
   <div class='artist'>
     <a href='/#/' class='artist-name'>MoxiE</a>
   </div>
-  <div class='gallery'>
-    <div class='gallery__image'>
-      <!-- <img src='images/gallery/default/jaguar.png' /> -->
+  <ul class='gallery'>
+    <li class='gallery__image'
+      data-ng-class='{ "active": image.active }'
+      data-ng-style='gc.getImageStyle(image.path)'
+      data-ng-repeat='image in gc.images'>
+      <div class='gallery-image-meta'>
+        <img data-ng-src='{{image.path}}' />
+        <div class='gallery-image-meta__name'
+          data-ng-bind='image.name'></div>
+        <div class='gallery-image-meta__description'
+          data-ng-bind='image.description'></div>
+        <div class='gallery-image-meta__actions'>
+          <button type='button' class='btn btn-primary'>
+          buy print
+          </button>
+          <button type='button' class='btn btn-primary'>buy original
+          </button>
+        </div>
+      </div>
+    </li>
+  </div>
+  <div class='gallery-controls'>
+    <div class='gallery-buttons'>
+      <button type='button' class='btn-play' data-ng-click='gc.togglePlay()'>
+        <i class='glyphicon glyphicon-play' data-ng-if='!isPlaying' />
+        <i class='glyphicon glyphicon-pause' data-ng-if='isPlaying' />
+      </button>
+    </div>
+    <ul class='gallery-mini'>
+      <li class='gallery-mini__image'
+        data-ng-class='{ "active": image.active }'
+        data-ng-style='gc.getImageStyle(image.path)'
+        data-ng-repeat='image in gc.images'
+        data-ng-click='gc.toggleByIndex(image.index)'>
+      </li>
     </div>
   </div>
 </section>
