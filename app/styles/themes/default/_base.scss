@@ -14,6 +14,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 body {
   font-family: $casualFont;
   background: $black;
+  // background: $black url('/images/bg-wood-octo.png') no-repeat;
+  // background-size: cover;
 }
 
 h1 {
@@ -66,24 +68,11 @@ h1 {
   }
 }
 
-.site-container {
-}
-
-.page-lp {
-  background: url('/images/site-bg.png') no-repeat 50%;
-  background-size: 200%;
-  height: 100vh;
-}
-
-.page > section {
-  height: 100vh;
-  animation: fade_from_black 3s ease-in;
-}
-
 .site-footer {
   bottom: 0;
   color: $transWhite;
   font-weight: $thinFont;
+  font-size: 0.6em;
   left: 0;
   padding: 10px;
   position: absolute;

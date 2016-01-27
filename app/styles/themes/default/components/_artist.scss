@@ -1,7 +1,6 @@
 @import '../base';
 
 .artist {
-  background-color: $white;
   border-radius: 2px;
   padding: 20px 0 0;
   min-width: 291px;
@@ -9,6 +8,7 @@
   .artist-name,
   .artist-tagline {
     font-family: $primaryFont;
+    color: $white;
   }
 
   .gallery-page & {
@@ -40,13 +40,14 @@
       padding: 20px 0;
       opacity: 1;
       position: static;
+      letter-spacing: 4px;
     }
 
     .artist-name {
-      color: $black;
       font-size: 7rem;
       letter-spacing: -16px;
       margin-left: -16px;
+      line-height: 1;
     }
 
     .artist-logo {
@@ -62,74 +63,231 @@
       text-align: center;
     }
   }
+}
 
+$animationSpeed: 1s;
+$logoTextBottom: 45px;
+$logoTextBottomX: 50px;
+$logoColor: $white;
 
-  // background-color: transparent;
-  // border-style: none;
-  // border-radius: 1px;
-  // padding: 0;
-  // position: absolute;
-  // top: 0;
-  // left: 0;
-  // transition: border, padding, top, left, transform 2s ease;
-  // transform: none;
+$headerBorderSize: 8px;
+$eyeBorderSize: 4px;
+$bodyHeight: 55px;
+$bodyWidth: 8px;
+$limbHeight: 155px;
+$limbWidth: 8px;
 
-  // .artist-logo,
-  // .artist-tagline {
-  //   opacity: 0;
-  //   position: absolute;
-  // }
+.moxie-logo {
+  width: 350px;
+  height: 250px;
+  position: relative;
+}
+.moxie-logo__head {
+  position: absolute;
+  left: 80px;
+  bottom: 110px;
+  width: 170px;
+  height: 90px;
+  border-radius: 50%;
+  border: solid $headerBorderSize $logoColor;
+  transition: all $animationSpeed;
 
-  // .artist-name,
-  // .artist-tagline {
-  //   font-family: $primaryFont;
-  // }
+  .moxie-logo--text & {
+    width: 35px;
+    height: 35px;
+    border: solid $headerBorderSize $logoColor;
+    position: absolute;
+    bottom: $logoTextBottom;
+    left: 78px;
+  }
+}
+.moxie-logo__eye {
+  position: absolute;
+  bottom: 129px;
+  left: 166px;
+  transition: all $animationSpeed;
+  width: 0px;
+  height: 45px;
 
-  // .artist-name {
-  //   color: $white;
-  //   padding: 0;
-  //   line-height: 5rem;
-  //   font-size: 6rem;
-  //   letter-spacing: 0;
-  //   margin-left: 0;
-  // }
+  .moxie-logo--text & {
+    bottom: $logoTextBottomX + 5px;
+  }
 
-  // .page-lp ~ & {
-  //   background-color: $white;
-  //   border: 10px solid $black;
-  //   border-radius: 1px;
-  //   padding: 45px;
-  //   position: absolute;
-  //   top: 50%;
-  //   left: 50%;
-  //   transform: translate(-50%, -50%);
+  &:before {
+    content: ' ';
+    border: solid $eyeBorderSize $logoColor;
+    position: absolute;
+    height: 45px;
+    transform: rotate(45deg);
+    transition: all $animationSpeed;
 
-  //   .artist-tagline {
-  //     font-size: 3rem;
-  //     padding: 20px 0;
-  //     opacity: 1;
-  //     position: static;
-  //   }
+    .moxie-logo--text & {
+      transform: rotate(135deg);
+      border: solid 4px $logoColor;
+      height: 50px;
+    }
+  }
+  &:after {
+    content: ' ';
+    border: solid $eyeBorderSize $logoColor;
+    position: absolute;
+    height: 45px;
+    transform: rotate(-45deg);
+    transition: all $animationSpeed;
 
-  //   .artist-name {
-  //     color: $black;
-  //     font-size: 10rem;
-  //     letter-spacing: -18px;
-  //     margin-left: -18px;
-  //     padding: 20px;
-  //   }
+    .moxie-logo--text & {
+      transform: rotate(-135deg);
+      border: solid 4px $logoColor;
+      height: 50px;
+    }
+  }
+}
 
-  //   .artist-logo {
-  //     display: block;
-  //     margin: 0 auto;
-  //     max-width: 240px;
-  //     opacity: 1;
-  //     position: static;
-  //   }
+.moxie-logo__body {
+  height: $bodyHeight;
+  width: $bodyWidth;
+  background: $logoColor;
+  position: absolute;
+  left: 172px;
+  bottom: 62px;
+  transition: all $animationSpeed;
 
-  //   .artist-name,
-  //   .artist-tagline {
-  //     text-align: center;
-  //   }
-  // }
+  .moxie-logo--text & {
+    height: 45px;
+    width: 8px;
+    bottom: $logoTextBottomX;
+    left: 230px;
+  }
+}
+
+.moxie-logo__left-ear {
+  background-color: #fff;
+  position: absolute;
+  bottom: 180px;
+  left: 105px;
+  transition: all $animationSpeed;
+  width: 0px;
+  height: 35px;
+
+  .moxie-logo--text & {
+    bottom: $logoTextBottomX;
+    left: 0;
+  }
+
+  &:before {
+    content: ' ';
+    border: solid 4px $logoColor;
+    position: absolute;
+    height: 35px;
+    transform: rotate(10deg);
+    transition: all $animationSpeed;
+    left: -5px;
+    bottom: -2px;
+
+    .moxie-logo--text & {
+      transform: rotate(0deg);
+    }
+  }
+  &:after {
+    content: ' ';
+    border: solid 4px $logoColor;
+    position: absolute;
+    height: 35px;
+    transform: rotate(-50deg);
+    transition: all $animationSpeed;
+    right: -16px;
+    bottom: 8px;
+
+    .moxie-logo--text & {
+      transform: rotate(-45deg);
+      right: -15px;
+      bottom: 10px;
+    }
+  }
+}
+
+.moxie-logo__right-ear {
+  background-color: #fff;
+  position: absolute;
+  bottom: 180px;
+  left: 230px;
+  transition: all $animationSpeed;
+  width: 0px;
+  height: 35px;
+  transform: scaleX(-1);
+
+  .moxie-logo--text & {
+    bottom: $logoTextBottomX;
+    left: 47px;
+  }
+
+  &:before {
+    content: ' ';
+    border: solid 4px $logoColor;
+    position: absolute;
+    height: 35px;
+    transform: rotate(-50deg);
+    transition: all $animationSpeed;
+    right: -18px;
+    bottom: 8px;
+
+    .moxie-logo--text & {
+      transform: rotate(-45deg);
+      right: -15px;
+      bottom: 10px;
+    }
+  }
+  &:after {
+    content: ' ';
+    border: solid 4px $logoColor;
+    position: absolute;
+    height: 35px;
+    transform: rotate(10deg);
+    transition: all $animationSpeed;
+    left: -5px;
+    bottom: -2px;
+
+    .moxie-logo--text & {
+      transform: rotate(0deg);
+    }
+  }
+}
+.moxie-logo__arms,
+.moxie-logo__legs,
+.moxie-logo__tail {
+  height: $limbHeight;
+  width: $limbWidth;
+  background: $logoColor;
+  position: absolute;
+  left: 166px;
+  bottom: 20px;
+  transition: all $animationSpeed;
+  transform: rotate(90deg);
+
+  .moxie-logo--text & {
+    height: 35px;
+    width: 8px;
+    bottom: $logoTextBottomX + 23px;
+    left: 284px;
+  }
+}
+
+.moxie-logo__legs {
+  bottom: 3px;
+
+  .moxie-logo--text & {
+    height: 35px;
+    width: 8px;
+    bottom: $logoTextBottomX + 5px;
+  }
+}
+
+.moxie-logo__tail {
+  bottom: -14px;
+
+  .moxie-logo--text & {
+    height: 35px;
+    width: 8px;
+    bottom: $logoTextBottomX - 13px;
+  }
 }

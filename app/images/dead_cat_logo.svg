@@ -6,13 +6,13 @@
     <defs></defs>
     <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
         <g id="Cat-Logo" sketch:type="MSArtboardGroup">
-            <path d="M339.381425,62.3989333 C306.69268,53.1854936 268.415721,47.8871778 227.5,47.8871778 C188.332827,47.8871778 151.583697,52.7423194 119.839856,61.2392736 L119.839856,61.2392736 L64.029295,15 L50.1726613,90.8109462 C24.8763809,107.480282 10,127.869004 10,149.887178 C10,206.220222 107.378067,251.887178 227.5,251.887178 C347.621933,251.887178 445,206.220222 445,149.887178 C445,128.353187 430.770694,108.377772 406.480983,91.9160041 L392.970705,18 L339.381425,62.3989333 Z" id="Oval-64" stroke="#000000" stroke-width="15" sketch:type="MSShapeGroup"></path>
+            <path d="M339.243727,67.8703997 C306.585209,58.9480464 268.358283,53.8182049 227.5,53.8182049 C188.388067,53.8182049 151.687361,58.5189022 119.974197,66.7472211 L119.974197,66.7472211 L64.3773272,21.8871778 L49.9012817,95.6680478 C24.7700181,111.82053 10,131.551228 10,152.852691 C10,207.547928 107.378067,251.887178 227.5,251.887178 C347.621933,251.887178 445,207.547928 445,152.852691 C445,132.018244 430.870522,112.686441 406.736674,96.7355734 L392.622673,24.7999568 L339.243727,67.8703997 Z" id="Oval-64" stroke="#000000" stroke-width="15" sketch:type="MSShapeGroup"></path>
             <text id="X" sketch:type="MSTextLayer" font-family="Ohmega Sans" font-size="124" font-weight="normal" fill="#000000">
-                <tspan x="170" y="189">X</tspan>
+                <tspan x="170" y="199">X</tspan>
             </text>
             <path d="M229.175347,258.451429 L229.175347,347.597046" id="Line-Copy-2" stroke="#000000" stroke-width="15" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
             <path d="M46,287.5 L408.1,287.5" id="Line" stroke="#000000" stroke-width="15" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
-            <path d="M71,317.5 L383.1,317.5" id="Line-Copy-3" stroke="#000000" stroke-width="15" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path d="M46,317.5 L408.1,317.5" id="Line-Copy-7" stroke="#000000" stroke-width="15" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
             <path d="M46,347.5 L408.1,347.5" id="Line-Copy-4" stroke="#000000" stroke-width="15" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
         </g>
     </g>
