@@ -11,6 +11,12 @@
     color: $white;
   }
 
+  .artist-loading {
+    font-weight: $thinFont;
+    color: rgba(255, 255, 255, 0.8);
+    padding-top: 30px;
+  }
+
   .gallery-page & {
     position: absolute;
     top: 0;
@@ -45,7 +51,7 @@
 
     .artist-name {
       font-size: 7rem;
-      letter-spacing: -16px;
+      letter-spacing: 4px;
       margin-left: -16px;
       line-height: 1;
     }

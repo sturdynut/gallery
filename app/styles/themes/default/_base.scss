@@ -70,7 +70,7 @@ h1 {
 }
 
 .site-footer {
-  bottom: 0;
+  bottom: -40px;
   color: $transWhite;
   font-weight: $thinFont;
   font-size: 0.6em;
@@ -78,4 +78,5 @@ h1 {
   padding: 10px;
   position: absolute;
   font-size: 1.4rem;
+  z-index: 100000;
 }

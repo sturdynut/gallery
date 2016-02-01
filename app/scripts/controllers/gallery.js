@@ -9,65 +9,219 @@
  */
 angular.module('moxieApp')
   .controller('GalleryCtrl', function ($scope, $interval) {
-    var vm            = this;
+    var vm = this;
 
-    $scope.pageClass  = 'page-gallery';
-    $scope.viewImage  = viewImage;
-    $scope.isPlaying  = true;
-
-    vm.images         = [
+    vm.images = [
       {
-        index: 0,
-        path: 'images/gallery/default/jaguar.png',
+        index: 2,
+        path: '/images/gallery/default/jaguar.png',
         name: 'Jaguar',
         description: 'Oil on canvas.',
-        active: true
+        size: '48" x 36"',
+        original_for_sale: true,
+        original_sold: false,
+        original_price: 3000.00,
+        original_purchase_url: null,
+        prints: [
+          {
+            size: '48" x 36"',
+            description: 'High Quality Print on Card Stock',
+            price: 300.00,
+            purchase_url: null,
+            for_sale: true
+          },
+          {
+            size: '24" x 18"',
+            description: 'High Quality Print on Card Stock',
+            price: 200.00,
+            purchase_url: null,
+            for_sale: true
+          }
+        ]
+      },
+      {
+        index: 0,
+        path: '/images/gallery/default/octoheart.png',
+        name: 'Octoheart',
+        description: 'Acrylic on canvas.',
+        size: '48" x 36"',
+        original_for_sale: true,
+        original_sold: false,
+        original_price: 6000.00,
+        original_purchase_url: null
       },
       {
         index: 1,
-        path: 'images/gallery/default/octoheart.png',
-        name: 'Octoheart',
-        description: 'Acrylic on canvas.',
-        active: false
-      },
-      {
-        index: 2,
-        path: 'images/gallery/default/tiger.png',
+        path: '/images/gallery/default/tiger.png',
         name: 'Tiger',
         description: 'Acrylic on wood.',
-        active: false
+        size: '36" x 36"',
+        original_for_sale: true,
+        original_sold: true,
+        original_price: 2000.00,
+        original_purchase_url: null
+      },
+      {
+        index: 3,
+        path: '/images/gallery/default/jaguar.png',
+        name: 'Jaguar',
+        description: 'Oil on canvas.',
+        size: '48" x 36"',
+        original_for_sale: true,
+        original_sold: false,
+        original_price: 3000.00,
+        original_purchase_url: null,
+        prints: [
+          {
+            size: '48" x 36"',
+            description: 'High Quality Print on Card Stock',
+            price: 300.00,
+            purchase_url: null,
+            for_sale: true
+          },
+          {
+            size: '24" x 18"',
+            description: 'High Quality Print on Card Stock',
+            price: 200.00,
+            purchase_url: null,
+            for_sale: true
+          }
+        ]
+      },
+      {
+        index: 4,
+        path: '/images/gallery/default/octoheart.png',
+        name: 'Octoheart',
+        description: 'Acrylic on canvas.',
+        size: '48" x 36"',
+        original_for_sale: true,
+        original_sold: false,
+        original_price: 6000.00,
+        original_purchase_url: null
+      },
+      {
+        index: 5,
+        path: '/images/gallery/default/tiger.png',
+        name: 'Tiger',
+        description: 'Acrylic on wood.',
+        size: '36" x 36"',
+        original_for_sale: true,
+        original_sold: true,
+        original_price: 2000.00,
+        original_purchase_url: null
+      },
+      {
+        index: 8,
+        path: '/images/gallery/default/jaguar.png',
+        name: 'Jaguar',
+        description: 'Oil on canvas.',
+        size: '48" x 36"',
+        original_for_sale: true,
+        original_sold: false,
+        original_price: 3000.00,
+        original_purchase_url: null,
+        prints: [
+          {
+            size: '48" x 36"',
+            description: 'High Quality Print on Card Stock',
+            price: 300.00,
+            purchase_url: null,
+            for_sale: true
+          },
+          {
+            size: '24" x 18"',
+            description: 'High Quality Print on Card Stock',
+            price: 200.00,
+            purchase_url: null,
+            for_sale: true
+          }
+        ]
+      },
+      {
+        index: 6,
+        path: '/images/gallery/default/octoheart.png',
+        name: 'Octoheart',
+        description: 'Acrylic on canvas.',
+        size: '48" x 36"',
+        original_for_sale: true,
+        original_sold: false,
+        original_price: 6000.00,
+        original_purchase_url: null
+      },
+      {
+        index: 7,
+        path: '/images/gallery/default/tiger.png',
+        name: 'Tiger',
+        description: 'Acrylic on wood.',
+        size: '36" x 36"',
+        original_for_sale: true,
+        original_sold: true,
+        original_price: 2000.00,
+        original_purchase_url: null
+      },
+      {
+        index: 9,
+        path: '/images/gallery/default/jaguar.png',
+        name: 'Jaguar',
+        description: 'Oil on canvas.',
+        size: '48" x 36"',
+        original_for_sale: true,
+        original_sold: false,
+        original_price: 3000.00,
+        original_purchase_url: null,
+        prints: [
+          {
+            size: '48" x 36"',
+            description: 'High Quality Print on Card Stock',
+            price: 300.00,
+            purchase_url: null,
+            for_sale: true
+          },
+          {
+            size: '24" x 18"',
+            description: 'High Quality Print on Card Stock',
+            price: 200.00,
+            purchase_url: null,
+            for_sale: true
+          }
+        ]
+      },
+      {
+        index: 11,
+        path: '/images/gallery/default/octoheart.png',
+        name: 'Octoheart',
+        description: 'Acrylic on canvas.',
+        size: '48" x 36"',
+        original_for_sale: true,
+        original_sold: false,
+        original_price: 6000.00,
+        original_purchase_url: null
+      },
+      {
+        index: 10,
+        path: '/images/gallery/default/tiger.png',
+        name: 'Tiger',
+        description: 'Acrylic on wood.',
+        size: '36" x 36"',
+        original_for_sale: true,
+        original_sold: true,
+        original_price: 2000.00,
+        original_purchase_url: null
       }
     ];
 
-    vm.currentIndex   = vm.images[0].index;
-    vm.frequency      = 5000;
-    vm.getImageStyle  = getImageStyle;
-    vm.isActive       = isActive;
+    $scope.pageClass  = 'page-gallery';
+    $scope.isPlaying  = true;
+
+    vm.startIndex     = 0;
+    vm.frequency      = 11000;
     vm.maxLength      = vm.images.length;
-    vm.setActive      = setActive;
-    vm.togglePlay     = togglePlay;
+
+    vm.getImageStyle  = getImageStyle;
     vm.toggleByIndex  = toggleByIndex;
+    vm.togglePlay     = togglePlay;
 
     init();
-
-    function init() {
-      $('.pt-page-1').addClass('pt-page-current');
-
-      play();
-
-      $scope.$watch('isPlaying', function (prev, current) {
-        if (current === true) {
-          play();
-        }
-        else {
-          pause();
-        }
-      })
-    }
-
-    function togglePlay() {
-      $scope.isPlaying = !$scope.isPlaying;
-    }
 
     function getImageStyle(path) {
       return {
@@ -75,59 +229,56 @@ angular.module('moxieApp')
       };
     }
 
-    function isActive (index) {
-      return vm.currentIndex === index;
-    }
-
-    function setActive (index) {
-      vm.lastIndex = vm.currentIndex;
-      vm.currentIndex = vm.maxLength === index
-        ? 0
-        : index;
-
-      vm.images[vm.lastIndex].active = false;
-      vm.images[vm.currentIndex].active = true;
-    }
-
     function toggleByIndex (index) {
-      pause();
-      vm.setActive(index);
+      stop();
+      show(index);
+    }
+
+    function togglePlay() {
+      $scope.isPlaying = !$scope.isPlaying;
     }
 
     // Private
 
-    function play() {
+    function init() {
+      show(vm.startIndex);
+      start();
+    }
+
+    function show (index) {
+      var startingImage = _.find(vm.images, { index: index });
+      vm.currentIndex = startingImage.index;
+
+      _.each(_.filter(vm.images, { __active: true }), function (image) {
+        image.__active = false;
+      });
+
+      startingImage.__active = true;
+    }
+
+    function next (index) {
+      vm.lastIndex = vm.currentIndex;
+      vm.currentIndex = vm.maxLength === index + 1
+        ? vm.startIndex
+        : index + 1;
+
+      vm.images[vm.lastIndex].__active = false;
+      vm.images[vm.currentIndex].__active = true;
+    }
+
+    function start() {
       $scope.galleryInterval = $interval(function() {
-        vm.setActive(vm.currentIndex);
-      }, vm.frequency, true);
+        if (vm.isPlaying === true) {
+          next(vm.currentIndex);
+        }
+      }, vm.frequency, 0, true);
     }
 
-    function pause() {
+    function stop() {
+      $scope.isPlaying = false;
+    }
+
+    function cancel() {
       $interval.cancel($scope.galleryInterval);
-    }
-
-    function viewImage(from, to) {
-      var animEndEventName = 'webkitAnimationEnd';
-
-      var $currPage = $(from);
-      var $nextPage = $(to).addClass('pt-page-current');
-      var outClass = 'ng-leave';
-      var inClass = 'ng-enter';
-
-      $currPage.addClass( outClass ).on( animEndEventName, function() {
-        $currPage.off( animEndEventName );
-        endCurrPage = true;
-        if( endNextPage ) {
-          onEndAnimation( $currPage, $nextPage );
-        }
-      } );
-
-      $nextPage.addClass( inClass ).on( animEndEventName, function() {
-        $nextPage.off( animEndEventName );
-        endNextPage = true;
-        if( endCurrPage ) {
-          onEndAnimation( $currPage, $nextPage );
-        }
-      } );
     }
   });

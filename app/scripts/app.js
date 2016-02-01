@@ -26,20 +26,20 @@ angular
       .state('index', {
         url: '/',
         views: {
-          'lp': {
+          'main': {
             templateUrl: 'views/lp.html',
             controller: 'LPCtrl',
             controllerAs: 'lpc'
-          },
-          'gallery': {
+          }
+        }
+      })
+      .state('gallery', {
+        url: '/gallery',
+        views: {
+          'main': {
             templateUrl: 'views/gallery.html',
             controller: 'GalleryCtrl',
             controllerAs: 'gc'
-          },
-          'about': {
-            templateUrl: 'views/about.html',
-            controller: 'AboutCtrl',
-            controllerAs: 'ac'
           }
         }
       });

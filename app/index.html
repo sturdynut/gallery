@@ -9,6 +9,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -22,9 +23,7 @@
 
     <!-- Add your site or application content here -->
     <div class="site-container">
-      <div class="page" data-ng-class='pageClass' data-ui-view='lp'></div>
-      <div class="page" data-ng-class='pageClass' data-ui-view='gallery'></div>
-      <!-- <div class="page" data-ng-class='pageClass' data-ui-view='about'></div> -->
+      <div class="page" data-ng-class='pageClass' data-ui-view='main'></div>
     </div>
     <footer class='site-footer'>
       <span class='legal'>&copy; Copyright 2016 Moxie. All Rights Reserved.</span>
@@ -44,7 +43,7 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
@@ -53,6 +52,11 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/ev-emitter/ev-emitter.js"></script>
+    <script src="bower_components/imagesloaded/imagesloaded.js"></script>
+    <script src="bower_components/letteringjs/jquery.lettering.js"></script>
+    <script src="bower_components/textillate/jquery.textillate.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js({.tmp,app}) scripts/scripts.js -->

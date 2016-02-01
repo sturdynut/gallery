@@ -1,11 +1,11 @@
-<section class='landing-page'>
+<section class='landing-page' data-ng-class='{ "landing-page--loading" : !lpc.imagesLoaded }'>
   <div data-ng-include='nav.html'></div>
   <div class='page-content--centered'>
     <div class='artist'>
-      <dead-cat></dead-cat>
+      <img src="images/moxie_logo.png" alt="Moxie Cat Logo" />
       <div class='artist-name'>MoxiE</div>
       <div class='artist-tagline'>Life Death Art</div>
-      <a href='#gallery' class='btn btn-primary'>Online Gallery</a>
+      <div class='artist-loading' data-in-effect='fadeIn' data-out-effect='fadeOut'>Loading Gallery...</div>
     </div>
   </div>
 </section>

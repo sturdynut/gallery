@@ -1,10 +1,10 @@
 .page.ng-leave {
-  z-index: 9999;
+  z-index: 9000;
   -webkit-animation: fadeOut 1s ease;
   animation: fadeOut 1s ease;
 }
 .page.ng-enter     {
-  z-index: 8888;
+  z-index: 9000;
   -webkit-animation: fadeIn 1s ease;
   animation: fadeIn 1s ease;
 }
