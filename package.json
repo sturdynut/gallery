@@ -1,16 +1,7 @@
 {
   "name": "Moxie",
   "private": true,
-  "devDependencies": {},
-  "engines": {
-    "node": "4.2.6"
-  },
-  "scripts": {
-    "start": "grunt serve",
-    "test": "grunt test"
-  },
-  "dependencies": {
-    "express": "^4.13.4",
+  "devDependencies": {
     "grunt": "0.4.5",
     "grunt-angular-templates": "^0.5.7",
     "grunt-autoprefixer": "^2.0.0",
@@ -41,6 +32,15 @@
     "karma-jasmine": "*",
     "karma-phantomjs-launcher": "*",
     "morgan": "^1.6.1",
-    "time-grunt": "^1.0.0"
+    "time-grunt": "^1.0.0"},
+  "engines": {
+    "node": "4.2.6"
+  },
+  "scripts": {
+    "start": "grunt serve",
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "express": "^4.13.4"
   }
 }
