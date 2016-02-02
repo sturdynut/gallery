@@ -5,7 +5,7 @@
   <ul class='gallery'>
     <li class='gallery__image'
       data-ng-class='{ "active": image.__active }'
-      data-ng-style='gc.getImageStyle(image.path)'
+      data-ng-style='gc.getImageStyle(image)'
       data-ng-repeat='image in gc.images'>
       <div class='gallery-image-meta'>
         <div class='gallery-image-meta__header'>
@@ -15,7 +15,8 @@
             data-ng-bind='image.description'></div>
         </div>
         <div class='gallery-image-meta__content'>
-          <div class='gallery-image-meta__prints-label'>
+          <div class='gallery-image-meta__prints-label'
+            data-ng-if='image.prints.length > 0 || image.original_for_sale'>
             Purchase Options
           </div>
           <ul class='gallery-image-meta__prints'>
@@ -31,6 +32,9 @@
                     data-ng-href='print.purchase_url'>
                     ${{ print.price }}
                   </a>
+                  <span data-ng-if='!print.for_sale'>
+                    Not for sale, sorry!
+                  </span>
                 </div>
               </div>
             </li>
@@ -50,7 +54,7 @@
                     SOLD
                   </span>
                   <span data-ng-if='!image.original_for_sale'>
-                    Not For Sale, sorry!
+                    Not for sale, sorry!
                   </span>
                 </div>
               </div>
@@ -70,7 +74,7 @@
     <ul class='gallery-mini'>
       <li class='gallery-mini__image'
         data-ng-class='{ "active": image.__active }'
-        data-ng-style='gc.getImageStyle(image.path)'
+        data-ng-style='gc.getImageThumbnailStyle(image)'
         data-ng-repeat='image in gc.images'
         data-ng-click='gc.toggleByIndex(image.index)'>
       </li>

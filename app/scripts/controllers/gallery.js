@@ -18,7 +18,7 @@ angular.module('moxieApp')
         name: 'Jaguar',
         description: 'Oil on canvas.',
         size: '48" x 36"',
-        original_for_sale: true,
+        original_for_sale: false,
         original_sold: false,
         original_price: 3000.00,
         original_purchase_url: null,
@@ -28,14 +28,14 @@ angular.module('moxieApp')
             description: 'High Quality Print on Card Stock',
             price: 300.00,
             purchase_url: null,
-            for_sale: true
+            for_sale: false
           },
           {
             size: '24" x 18"',
             description: 'High Quality Print on Card Stock',
             price: 200.00,
             purchase_url: null,
-            for_sale: true
+            for_sale: false
           }
         ]
       },
@@ -45,7 +45,7 @@ angular.module('moxieApp')
         name: 'Octoheart',
         description: 'Acrylic on canvas.',
         size: '48" x 36"',
-        original_for_sale: true,
+        original_for_sale: false,
         original_sold: false,
         original_price: 6000.00,
         original_purchase_url: null
@@ -56,155 +56,32 @@ angular.module('moxieApp')
         name: 'Tiger',
         description: 'Acrylic on wood.',
         size: '36" x 36"',
-        original_for_sale: true,
+        original_for_sale: false,
         original_sold: true,
         original_price: 2000.00,
         original_purchase_url: null
       },
       {
         index: 3,
-        path: '/images/gallery/default/jaguar.png',
-        name: 'Jaguar',
-        description: 'Oil on canvas.',
-        size: '48" x 36"',
-        original_for_sale: true,
+        path: '/images/gallery/default/skull_lady.png',
+        name: 'Skull Lady',
+        description: 'A lady with a skull.',
+        size: '36" x 36"',
+        original_for_sale: false,
         original_sold: false,
-        original_price: 3000.00,
+        original_price: 2000.00,
         original_purchase_url: null,
-        prints: [
-          {
-            size: '48" x 36"',
-            description: 'High Quality Print on Card Stock',
-            price: 300.00,
-            purchase_url: null,
-            for_sale: true
-          },
-          {
-            size: '24" x 18"',
-            description: 'High Quality Print on Card Stock',
-            price: 200.00,
-            purchase_url: null,
-            for_sale: true
-          }
-        ]
+        alignVertically: 'top',
+        backgroundSize: 'contain'
       },
       {
         index: 4,
-        path: '/images/gallery/default/octoheart.png',
-        name: 'Octoheart',
-        description: 'Acrylic on canvas.',
-        size: '48" x 36"',
-        original_for_sale: true,
-        original_sold: false,
-        original_price: 6000.00,
-        original_purchase_url: null
-      },
-      {
-        index: 5,
-        path: '/images/gallery/default/tiger.png',
-        name: 'Tiger',
-        description: 'Acrylic on wood.',
+        path: '/images/gallery/default/butterfly.png',
+        name: 'Butterfly Geometry',
+        description: 'A butterfly with some geometry.',
         size: '36" x 36"',
-        original_for_sale: true,
-        original_sold: true,
-        original_price: 2000.00,
-        original_purchase_url: null
-      },
-      {
-        index: 8,
-        path: '/images/gallery/default/jaguar.png',
-        name: 'Jaguar',
-        description: 'Oil on canvas.',
-        size: '48" x 36"',
-        original_for_sale: true,
+        original_for_sale: false,
         original_sold: false,
-        original_price: 3000.00,
-        original_purchase_url: null,
-        prints: [
-          {
-            size: '48" x 36"',
-            description: 'High Quality Print on Card Stock',
-            price: 300.00,
-            purchase_url: null,
-            for_sale: true
-          },
-          {
-            size: '24" x 18"',
-            description: 'High Quality Print on Card Stock',
-            price: 200.00,
-            purchase_url: null,
-            for_sale: true
-          }
-        ]
-      },
-      {
-        index: 6,
-        path: '/images/gallery/default/octoheart.png',
-        name: 'Octoheart',
-        description: 'Acrylic on canvas.',
-        size: '48" x 36"',
-        original_for_sale: true,
-        original_sold: false,
-        original_price: 6000.00,
-        original_purchase_url: null
-      },
-      {
-        index: 7,
-        path: '/images/gallery/default/tiger.png',
-        name: 'Tiger',
-        description: 'Acrylic on wood.',
-        size: '36" x 36"',
-        original_for_sale: true,
-        original_sold: true,
-        original_price: 2000.00,
-        original_purchase_url: null
-      },
-      {
-        index: 9,
-        path: '/images/gallery/default/jaguar.png',
-        name: 'Jaguar',
-        description: 'Oil on canvas.',
-        size: '48" x 36"',
-        original_for_sale: true,
-        original_sold: false,
-        original_price: 3000.00,
-        original_purchase_url: null,
-        prints: [
-          {
-            size: '48" x 36"',
-            description: 'High Quality Print on Card Stock',
-            price: 300.00,
-            purchase_url: null,
-            for_sale: true
-          },
-          {
-            size: '24" x 18"',
-            description: 'High Quality Print on Card Stock',
-            price: 200.00,
-            purchase_url: null,
-            for_sale: true
-          }
-        ]
-      },
-      {
-        index: 11,
-        path: '/images/gallery/default/octoheart.png',
-        name: 'Octoheart',
-        description: 'Acrylic on canvas.',
-        size: '48" x 36"',
-        original_for_sale: true,
-        original_sold: false,
-        original_price: 6000.00,
-        original_purchase_url: null
-      },
-      {
-        index: 10,
-        path: '/images/gallery/default/tiger.png',
-        name: 'Tiger',
-        description: 'Acrylic on wood.',
-        size: '36" x 36"',
-        original_for_sale: true,
-        original_sold: true,
         original_price: 2000.00,
         original_purchase_url: null
       }
@@ -217,15 +94,53 @@ angular.module('moxieApp')
     vm.frequency      = 11000;
     vm.maxLength      = vm.images.length;
 
-    vm.getImageStyle  = getImageStyle;
-    vm.toggleByIndex  = toggleByIndex;
-    vm.togglePlay     = togglePlay;
+    vm.getImageStyle            = getImageStyle;
+    vm.getImageThumbnailStyle   = getImageThumbnailStyle;
+    vm.toggleByIndex            = toggleByIndex;
+    vm.togglePlay               = togglePlay;
 
     init();
 
-    function getImageStyle(path) {
+    function getImageStyle(image) {
+      var path = image.path;
+
+      var verticalAlignment = (_.isUndefined(image.alignVertically) || !image.alignVertically)
+        ? 'center'
+        : image.alignVertically;
+      var horizontalAlignment = (_.isUndefined(image.alignHorizontal) || !image.alignHorizontal)
+        ? 'center'
+        : image.alignHorizontal;
+
+      var backgroundPosition = verticalAlignment + ' ' + horizontalAlignment;
+
+      var backgroundSize = (_.isUndefined(image.backgroundSize) || !image.backgroundSize)
+        ? 'cover'
+        : image.backgroundSize;
+
       return {
-        'background-image': ('url(' + path + ')')
+        'background-image': ('url(' + path + ')'),
+        'background-position': backgroundPosition,
+        'background-size': backgroundSize,
+        'background-repeat': 'no-repeat'
+      };
+    }
+
+    function getImageThumbnailStyle(image) {
+      var path = image.path;
+
+      var verticalAlignment = (_.isUndefined(image.alignVertically) || !image.alignVertically)
+        ? 'center'
+        : image.alignVertically;
+      var horizontalAlignment = (_.isUndefined(image.alignHorizontal) || !image.alignHorizontal)
+        ? 'center'
+        : image.alignHorizontal;
+
+      var backgroundPosition = verticalAlignment + ' ' + horizontalAlignment;
+
+      return {
+        'background-image': ('url(' + path + ')'),
+        'background-position': backgroundPosition,
+        'background-repeat': 'no-repeat'
       };
     }
 
