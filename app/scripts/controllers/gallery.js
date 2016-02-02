@@ -37,7 +37,9 @@ angular.module('moxieApp')
             purchase_url: null,
             for_sale: false
           }
-        ]
+        ],
+        alignVertically: 'top',
+        alignHorizontal: 'left'
       },
       {
         index: 0,
@@ -48,7 +50,25 @@ angular.module('moxieApp')
         original_for_sale: false,
         original_sold: false,
         original_price: 6000.00,
-        original_purchase_url: null
+        original_purchase_url: null,
+        prints: [
+          {
+            size: '48" x 36"',
+            description: 'High Quality Print on Card Stock',
+            price: 300.00,
+            purchase_url: null,
+            for_sale: false
+          },
+          {
+            size: '24" x 18"',
+            description: 'High Quality Print on Card Stock',
+            price: 200.00,
+            purchase_url: null,
+            for_sale: false
+          }
+        ],
+        alignVertically: 'top',
+        alignHorizontal: 'right'
       },
       {
         index: 1,
@@ -59,7 +79,25 @@ angular.module('moxieApp')
         original_for_sale: false,
         original_sold: true,
         original_price: 2000.00,
-        original_purchase_url: null
+        original_purchase_url: null,
+        prints: [
+          {
+            size: '48" x 36"',
+            description: 'High Quality Print on Card Stock',
+            price: 300.00,
+            purchase_url: null,
+            for_sale: false
+          },
+          {
+            size: '24" x 18"',
+            description: 'High Quality Print on Card Stock',
+            price: 200.00,
+            purchase_url: null,
+            for_sale: false
+          }
+        ],
+        alignVertically: 'top',
+        backgroundSize: 'contain'
       },
       {
         index: 3,
@@ -71,6 +109,22 @@ angular.module('moxieApp')
         original_sold: false,
         original_price: 2000.00,
         original_purchase_url: null,
+        prints: [
+          {
+            size: '48" x 36"',
+            description: 'High Quality Print on Card Stock',
+            price: 300.00,
+            purchase_url: null,
+            for_sale: false
+          },
+          {
+            size: '24" x 18"',
+            description: 'High Quality Print on Card Stock',
+            price: 200.00,
+            purchase_url: null,
+            for_sale: false
+          }
+        ],
         alignVertically: 'top',
         backgroundSize: 'contain'
       },
@@ -83,16 +137,37 @@ angular.module('moxieApp')
         original_for_sale: false,
         original_sold: false,
         original_price: 2000.00,
-        original_purchase_url: null
+        original_purchase_url: null,
+        prints: [
+          {
+            size: '48" x 36"',
+            description: 'High Quality Print on Card Stock',
+            price: 300.00,
+            purchase_url: null,
+            for_sale: false
+          },
+          {
+            size: '24" x 18"',
+            description: 'High Quality Print on Card Stock',
+            price: 200.00,
+            purchase_url: null,
+            for_sale: false
+          }
+        ],
+        alignVertically: 'top',
+        backgroundSize: 'contain'
       }
     ];
+
+    vm.thumb_images   = angular.copy(vm.images);
 
     $scope.pageClass  = 'page-gallery';
     $scope.isPlaying  = true;
 
     vm.startIndex     = 0;
-    vm.frequency      = 11000;
+    vm.frequency      = 6000;
     vm.maxLength      = vm.images.length;
+    vm.isPlaying      = true;
 
     vm.getImageStyle            = getImageStyle;
     vm.getImageThumbnailStyle   = getImageThumbnailStyle;
@@ -161,12 +236,15 @@ angular.module('moxieApp')
     }
 
     function show (index) {
+      console.log('showing...', index);
       var startingImage = _.find(vm.images, { index: index });
       vm.currentIndex = startingImage.index;
 
       _.each(_.filter(vm.images, { __active: true }), function (image) {
         image.__active = false;
       });
+
+      console.log('startingImage...', startingImage);
 
       startingImage.__active = true;
     }
@@ -177,11 +255,15 @@ angular.module('moxieApp')
         ? vm.startIndex
         : index + 1;
 
+      console.log('lastIndex...false: ', vm.lastIndex);
+      console.log('currentIndex...true: ', vm.currentIndex);
+
       vm.images[vm.lastIndex].__active = false;
       vm.images[vm.currentIndex].__active = true;
     }
 
     function start() {
+      console.log('starting...');
       $scope.galleryInterval = $interval(function() {
         if (vm.isPlaying === true) {
           next(vm.currentIndex);
@@ -190,10 +272,12 @@ angular.module('moxieApp')
     }
 
     function stop() {
+      console.log('stopping...');
       $scope.isPlaying = false;
     }
 
     function cancel() {
+      console.log('canceling...');
       $interval.cancel($scope.galleryInterval);
     }
   });

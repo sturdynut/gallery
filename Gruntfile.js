@@ -242,7 +242,6 @@ module.exports = function (grunt) {
         src: [
           '<%= yeoman.dist %>/scripts/{,*/}*.js',
           '<%= yeoman.dist %>/styles/{,*/}*.css',
-          '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
           '<%= yeoman.dist %>/styles/fonts/*'
         ]
       }
@@ -313,7 +312,7 @@ module.exports = function (grunt) {
     imagemin: {
       dist: {
         files: [{
-          expand: true,
+          expand: false,
           cwd: '<%= yeoman.app %>/images',
           src: '{,*/}*.{png,jpg,jpeg,gif}',
           dest: '<%= yeoman.dist %>/images'
@@ -324,7 +323,7 @@ module.exports = function (grunt) {
     svgmin: {
       dist: {
         files: [{
-          expand: true,
+          expand: false,
           cwd: '<%= yeoman.app %>/images',
           src: '{,*/}*.svg',
           dest: '<%= yeoman.dist %>/images'
@@ -352,7 +351,7 @@ module.exports = function (grunt) {
     ngtemplates: {
       dist: {
         options: {
-          module: 'webApp',
+          module: 'moxieApp',
           htmlmin: '<%= htmlmin.dist.options %>',
           usemin: 'scripts/scripts.js'
         },
@@ -394,14 +393,14 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             '*.html',
-            'images/{,*/}*.{webp}',
+            'images/{,*/}*.*',
             'styles/fonts/{,*/}*.*'
           ]
         }, {
           expand: true,
-          cwd: '.tmp/images',
+          cwd: '<%= yeoman.app %>/images',
           dest: '<%= yeoman.dist %>/images',
-          src: ['generated/*']
+          src: ["*.*", "**/*.*"]
         }, {
           expand: true,
           cwd: '.',
@@ -426,9 +425,7 @@ module.exports = function (grunt) {
         'compass'
       ],
       dist: [
-        'compass:dist',
-        'imagemin',
-        'svgmin'
+        'compass:dist'
       ]
     },
 
