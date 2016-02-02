@@ -39,7 +39,7 @@
     "node": "4.2.6"
   },
   "scripts": {
-    "start": "grunt serve",
+    "start": "node web.js",
     "test": "grunt test"
   },
   "dependencies": {
