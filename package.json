@@ -31,7 +31,6 @@
     "jshint-stylish": "^1.0.0",
     "karma-jasmine": "*",
     "karma-phantomjs-launcher": "*",
-    "morgan": "^1.6.1",
     "time-grunt": "^1.0.0"
   },
   "engines": {
@@ -42,6 +41,7 @@
     "test": "grunt test"
   },
   "dependencies": {
+    "morgan": "^1.6.1",
     "express": "^4.13.4",
     "gzippo": "^0.2.0"
   }
