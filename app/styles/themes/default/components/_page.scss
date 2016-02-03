@@ -5,6 +5,12 @@
   right: 0;
   bottom: 0;
   left: 0;
+  opacity: 0;
+  transition: opacity 300ms;
+
+  &.page--active {
+    opacity: 1;
+  }
 
   > section {
     position: absolute;
@@ -26,14 +32,14 @@
 
 // Landing page
 
-.landing-page {
-  background: $black;
-  position: absolute;
-  // top: -99999px;
-  transition: top 300ms linear 2000ms;
-  z-index: 90000;
-}
+// .landing-page {
+//   background: $black;
+//   position: absolute;
+//   // top: -99999px;
+//   transition: top 300ms linear 2000ms;
+//   z-index: 90000;
+// }
 
-.landing-page--loading {
-  top: 0;
-}
+// .landing-page--loading {
+//   top: 0;
+// }

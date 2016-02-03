@@ -1,12 +1,27 @@
-<section id='gallery' class='gallery-page'>
+<section class='landing-page page page--active'>
+  <div data-ng-include='nav.html'></div>
+  <div class='page-content--centered'>
+    <div class='artist'>
+      <img src='images/moxie_logo.png' alt='Moxie Cat Logo' />
+      <div class='artist-name'>MoxiE</div>
+      <div class='artist-tagline'>Life Death Art</div>
+      <div class='artist-loading' data-in-effect='fadeIn' data-out-effect='fadeOut'>Loading Gallery...</div>
+    </div>
+  </div>
+</section>
+<div class='image-loader' style='display: none;'>
+    <img class='image-loader-image' data-ng-src='{{ image.path }}'
+      data-ng-repeat='image in ic.images' />
+</div>
+<section id='gallery' class='gallery-page page'>
   <div class='artist'>
     <a href='/#/' class='artist-name'>MoxiE</a>
   </div>
   <ul class='gallery'>
     <li class='gallery__image'
-      data-ng-class='{ "active": image.__active }'
-      data-ng-style='gc.getImageStyle(image)'
-      data-ng-repeat='image in gc.images'>
+      data-ng-class='{ "active": ic.isActive(image) }'
+      data-ng-style='ic.getImageStyle(image)'
+      data-ng-repeat='image in ic.images'>
       <div class='gallery-image-meta'>
         <div class='gallery-image-meta__header'>
           <div class='gallery-image-meta__name'
@@ -67,10 +82,10 @@
   <div class='gallery-controls'>
     <ul class='gallery-mini'>
       <li class='gallery-mini__image'
-        data-ng-class='{ "active": image.__active }'
-        data-ng-style='gc.getImageThumbnailStyle(image)'
-        data-ng-repeat='image in gc.thumb_images'
-        data-ng-click='gc.toggleByIndex(image.index)'>
+        data-ng-class='{ "active": ic.isActive(image) }'
+        data-ng-style='ic.getImageThumbnailStyle(image)'
+        data-ng-repeat='image in ic.thumb_images'
+        data-ng-click='ic.toggleByIndex(image.index)'>
       </li>
     </ul>
   </div>
