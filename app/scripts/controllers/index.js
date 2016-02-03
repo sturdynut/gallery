@@ -26,6 +26,8 @@ angular.module('moxieApp')
     vm.toggleByIndex            = toggleByIndex;
     vm.togglePlay               = togglePlay;
     vm.isActive                 = isActive;
+    vm.next                     = next;
+    vm.prev                     = prev;
 
     init();
 
@@ -111,7 +113,15 @@ angular.module('moxieApp')
       }
     }
 
-    function next(index) {
+    function prev() {
+      var index = vm.currentIndex;
+      vm.currentIndex = 0 === index ?
+        vm.maxLength - 1
+        : index - 1;
+    }
+
+    function next() {
+      var index = vm.currentIndex;
       vm.currentIndex = vm.maxLength === index + 1 ?
         vm.startIndex
         : index + 1;
@@ -120,7 +130,7 @@ angular.module('moxieApp')
     function start() {
       $scope.galleryInterval = $interval(function() {
         if ($scope.isPlaying === true) {
-          next(vm.currentIndex);
+          next();
         }
       }, vm.frequency, 0, true);
     }
