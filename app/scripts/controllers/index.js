@@ -78,7 +78,6 @@ angular.module('moxieApp')
 
     function toggleByIndex(index) {
       stop();
-      // show(index);
       vm.currentIndex = index;
     }
 
@@ -97,13 +96,13 @@ angular.module('moxieApp')
       });
 
       if (!vm.isImagesLoaded) {
-        $('.image-loader').imagesLoaded()
+        $('.gallery').imagesLoaded({background: '.gallery__image'})
           .done(function() {
             $window.setTimeout(function() {
               $('.landing-page').toggleClass('page--active');
               $('.gallery-page').toggleClass('page--active');
               vm.currentIndex = vm.startIndex;
-              start();
+              // start();
               vm.isImagesLoaded = true;
 
               $scope.$apply();

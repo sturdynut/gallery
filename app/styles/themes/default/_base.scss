@@ -45,36 +45,14 @@ h1 {
 // background: linear-gradient(135deg,$purple 0%,$teal 100%); /* W3C */
 // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$purple, endColorstr=$teal,GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
 
-@keyframes fade_from_black {
-  0% {
-    background-color: $black;
-  }
-  100% {
-    background-color: transparent;
-  }
-}
-
-@keyframes float_around {
-  0% {
-    background-position: 50%;
-    background-size: 200%;
-  }
-  50% {
-    background-position: 0;
-    background-size: 100%;
-  }
-  100% {
-    background-position: -50%;
-    background-size: 200%;
-  }
-}
-
 .site-footer {
+  background-color: $black;
   bottom: -40px;
   color: $transWhite;
   font-weight: $thinFont;
   font-size: 0.6em;
   left: 0;
+  right: 0;
   padding: 10px;
   position: absolute;
   font-size: 1.4rem;
