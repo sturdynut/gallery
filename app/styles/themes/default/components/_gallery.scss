@@ -83,18 +83,33 @@ $gallery-controls-height: 100px;
   background-size: cover;
   background-position: center center;
   height: $gallery-controls-height;
-  min-width: 153px;
+  width: 153px;
   border-bottom: 4px solid transparent;
   flex-basis: auto;
   flex-grow: 1;
 
+  @media screen and (min-width: $big-bp) {
+    border-left: 4px solid transparent;
+    border-bottom-style: none;
+  }
+
   &.active,
   &.active:hover {
     border-bottom: 4px solid $highlight-color-light;
+
+    @media screen and (min-width: $big-bp) {
+      border-left: 4px solid $highlight-color-dark;
+      border-bottom-style: none;
+    }
   }
 
   &:not(.active):hover {
     border-bottom: 4px solid $highlight-color-dark;
+
+    @media screen and (min-width: $big-bp) {
+      border-left: 4px solid $highlight-color-dark;
+      border-bottom-style: none;
+    }
   }
 }
 
@@ -171,14 +186,6 @@ $gallery-controls-height: 100px;
 
     .active & {
       display: flex;
-    }
-
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.9);
-
-      .gallery-image-meta__content {
-        opacity: 1;
-      }
     }
   }
 

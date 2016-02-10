@@ -8,7 +8,7 @@
  * Service in the moxieApp.
  */
 angular.module('moxieApp')
-  .service('GalleryService', function () {
+  .service('GalleryService', function() {
     var self = this;
 
     self.images = [
@@ -133,6 +133,35 @@ angular.module('moxieApp')
           path: '/images/gallery/default/butterfly.png',
           name: 'Butterfly Geometry',
           description: 'A butterfly with some geometry.',
+          size: '36" x 36"',
+          original_for_sale: false,
+          original_sold: false,
+          original_price: 2000.00,
+          original_purchase_url: null,
+          prints: [
+            {
+              size: '48" x 36"',
+              description: 'High Quality Print on Card Stock',
+              price: 300.00,
+              purchase_url: null,
+              for_sale: false
+            },
+            {
+              size: '24" x 18"',
+              description: 'High Quality Print on Card Stock',
+              price: 200.00,
+              purchase_url: null,
+              for_sale: false
+            }
+          ],
+          alignVertically: 'top',
+          backgroundSize: 'contain'
+        },
+        {
+          index: 5,
+          path: '/images/gallery/default/bird-skull.png',
+          name: 'Bird Skull',
+          description: 'A bird skull on wood.',
           size: '36" x 36"',
           original_for_sale: false,
           original_sold: false,
