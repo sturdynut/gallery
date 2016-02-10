@@ -2,8 +2,12 @@
 
 .artist {
   border-radius: 2px;
-  padding: 20px 0 0;
+  margin: -35px 0 0;
   min-width: 291px;
+
+  @media screen and (min-width: $tablet-bp) {
+    min-width: 480px;
+  }
 
   .artist-name,
   .artist-tagline {
@@ -12,13 +16,15 @@
   }
 
   .arting-logo {
-    max-width: 240px;
-  }
+    width: 240px;
+    height: 192px;
+    margin-bottom: 2em;
 
-  .artist-loading {
-    font-weight: $thinFont;
-    color: rgba(255, 255, 255, 0.8);
-    padding-top: 30px;
+    @media screen and (min-width: $tablet-bp) {
+      margin-bottom: 0;
+      width: 330px;
+      height: 265px;
+    }
   }
 
   .gallery-page & {
@@ -46,18 +52,34 @@
 
   .landing-page & {
     .artist-tagline {
-      font-size: 1.5rem;
-      padding: 20px 0;
+      font-size: 2.5rem;
+      padding: 0;
       opacity: 1;
-      position: static;
-      letter-spacing: 4px;
+      letter-spacing: -3px;
+      color: $white;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 500px;
+
+      @media screen and (min-width: $tablet-bp) {
+        font-size: 3.8rem;
+      }
     }
 
     .artist-name {
       font-size: 7rem;
-      letter-spacing: 4px;
-      margin-left: -16px;
+      letter-spacing: -7px;
       line-height: 1;
+      margin: 10px 0 40px;
+      background: -webkit-linear-gradient(135deg,$purple 0%,$teal 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      @media screen and (min-width: $tablet-bp) {
+        font-size: 10rem;
+        margin-top: 30px;
+      }
     }
 
     .artist-logo {

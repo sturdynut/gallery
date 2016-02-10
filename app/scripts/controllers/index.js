@@ -8,7 +8,7 @@
  * Controller of the moxieApp
  */
 angular.module('moxieApp')
-  .controller('IndexCtrl', function($scope, $window, $interval, GalleryService) {
+  .controller('IndexCtrl', function($scope, $log, $timeout, $interval, GalleryService) {
     var vm = this;
 
     vm.images         = GalleryService.images;
@@ -91,25 +91,32 @@ angular.module('moxieApp')
 
     function init() {
       $(function() {
-        $('.artist-loading').textillate({
+        $('[data-in-effect]').textillate({
           loop: true,
           autoStart: true
         });
       });
 
-      if (!vm.isImagesLoaded) {
-        $('.gallery').imagesLoaded({background: '.gallery__image'})
-          .done(function() {
-            $window.setTimeout(function() {
-              $('.landing-page').toggleClass('page--active');
-              $('.gallery-page').toggleClass('page--active');
-              vm.currentIndex = vm.startIndex;
-              // start();
-              vm.isImagesLoaded = true;
+      $timeout(preloadGallery, 1000);
+    }
 
-              $scope.$apply();
-            }, 2000);
-          });
+    function preloadGallery() {
+      if (!vm.isImagesLoaded) {
+        $('.gallery__image').imagesLoaded({
+          background: true
+        }, function(imagesLoaded) {
+          $log.info('sturdynut:', 'Done loading gallery images.  Count: ' + imagesLoaded.images.length);
+
+          $timeout(function() {
+            $('.landing-page').toggleClass('page--active');
+            $('.gallery-page').toggleClass('page--active');
+            vm.currentIndex = vm.startIndex;
+            start();
+            vm.isImagesLoaded = true;
+
+            $scope.$apply();
+          }, 2000);
+        });
       }
     }
 

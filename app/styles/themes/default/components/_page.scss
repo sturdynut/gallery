@@ -1,4 +1,5 @@
 .page {
+  background: $black;
   height: 100vh;
   position: absolute;
   top: 0;
@@ -6,7 +7,7 @@
   bottom: 0;
   left: 0;
   opacity: 0;
-  transition: opacity 300ms;
+  transition: opacity 2s;
   overflow: hidden;
 
   &.page--active {
@@ -30,17 +31,3 @@
   transform: translate(-50%, -50%);
   text-align: center;
 }
-
-// Landing page
-
-// .landing-page {
-//   background: $black;
-//   position: absolute;
-//   // top: -99999px;
-//   transition: top 300ms linear 2000ms;
-//   z-index: 90000;
-// }
-
-// .landing-page--loading {
-//   top: 0;
-// }
