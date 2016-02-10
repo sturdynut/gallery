@@ -39,6 +39,10 @@ $gallery-controls-height: 100px;
     float: none;
   }
 
+  @media screen and (min-width: $big-bp) {
+    flex-direction: column;
+  }
+
   @media screen and (max-width: $small-bp) {
     display: none;
   }
@@ -98,12 +102,21 @@ $gallery-controls-height: 100px;
   display: flex;
   position: absolute;
   bottom: 0;
-  left: 0;
+
   right: 0;
   height: $gallery-controls-height;
   z-index: 1;
   transition: background-color 300ms,
     bottom 300ms;
+
+  @media screen and (max-width: $small-bp) {
+    left: 0;
+  }
+
+  @media screen and (min-width: $big-bp) {
+    top: 0;
+    height: 100vh;
+  }
 
   .gallery-buttons {
     position: absolute;
@@ -144,16 +157,17 @@ $gallery-controls-height: 100px;
   display: none;
   position:  absolute;
   left: 0;
-  right: 0;
+  right: 153px;
+  bottom: $gallery-controls-height;
   font-size: 2.0rem;
   color: $white;
   transition: background-color 300ms;
   z-index: 2;
 
   @media screen and (min-width: $big-bp) {
-    bottom: $gallery-controls-height;
     padding: $default-gutters;
     height: 140px;
+    bottom: 0;
 
     .active & {
       display: flex;
@@ -172,7 +186,7 @@ $gallery-controls-height: 100px;
     bottom: 0;
 
     .active & {
-      display: block;
+      display: none;
     }
   }
 

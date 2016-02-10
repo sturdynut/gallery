@@ -36,6 +36,7 @@ module.exports = function(config) {
       'bower_components/letteringjs/jquery.lettering.js',
       'bower_components/textillate/jquery.textillate.js',
       'bower_components/lodash/lodash.js',
+      'bower_components/angular-swipe/dist/angular-swipe.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

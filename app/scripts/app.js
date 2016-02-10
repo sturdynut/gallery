@@ -15,7 +15,8 @@
       'ngCookies',
       'ui.router',
       'ngSanitize',
-      'ngTouch'
+      'ngTouch',
+      'swipe'
     ])
     .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 

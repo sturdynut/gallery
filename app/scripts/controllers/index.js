@@ -120,14 +120,22 @@ angular.module('moxieApp')
       }
     }
 
-    function prev() {
+    function prev(stopGallery) {
+      if (!_.isUndefined(stopGallery) && stopGallery === true) {
+        stop();
+      }
+
       var index = vm.currentIndex;
       vm.currentIndex = 0 === index ?
         vm.maxLength - 1
         : index - 1;
     }
 
-    function next() {
+    function next(stopGallery) {
+      if (!_.isUndefined(stopGallery) && stopGallery === true) {
+        stop();
+      }
+
       var index = vm.currentIndex;
       vm.currentIndex = vm.maxLength === index + 1 ?
         vm.startIndex

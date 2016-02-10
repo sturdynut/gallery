@@ -17,8 +17,10 @@
       data-ng-class='{ "active": ic.isActive(image) }'>
       <div class='gallery__image'
       data-ng-style='ic.getImageStyle(image)'
-      data-ng-swipe-left='ic.prev();'
-      data-ng-swipe-right='ic.next();'></div>
+      data-ng-swipe-up='ic.next(true);'
+      data-ng-swipe-down='ic.prev(true);'
+      data-ng-swipe-left='ic.prev(true);'
+      data-ng-swipe-right='ic.next(true);'></div>
       <div class='gallery-image-meta'>
         <div class='gallery-image-meta__header'>
           <div class='gallery-image-meta__name'
@@ -81,7 +83,7 @@
       <li class='gallery-mini__image'
         data-ng-class='{ "active": ic.isActive(image) }'
         data-ng-style='ic.getImageThumbnailStyle(image)'
-        data-ng-repeat='image in ic.thumb_images'
+        data-ng-repeat='image in ic.thumb_images | orderBy: "index"'
         data-ng-click='ic.toggleByIndex(image.index)'>
       </li>
     </ul>
