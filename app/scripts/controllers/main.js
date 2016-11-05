@@ -10,7 +10,6 @@
    */
   angular.module('moxieApp')
     .controller('MainCtrl', function($scope) {
-      var vm = this;
 
     });
 

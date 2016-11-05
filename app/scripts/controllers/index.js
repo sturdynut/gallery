@@ -20,6 +20,7 @@ angular.module('moxieApp')
     vm.startIndex     = 0;
     vm.frequency      = 6000;
     vm.maxLength      = vm.images.length;
+    vm.showGalleryControls = false;
 
     vm.getImageStyle            = getImageStyle;
     vm.getImageThumbnailStyle   = getImageThumbnailStyle;
@@ -28,6 +29,7 @@ angular.module('moxieApp')
     vm.isActive                 = isActive;
     vm.next                     = next;
     vm.prev                     = prev;
+    vm.toggleGalleryControls    = toggleGalleryControls;
 
     init();
 
@@ -81,6 +83,7 @@ angular.module('moxieApp')
     function toggleByIndex(index) {
       stop();
       vm.currentIndex = index;
+      vm.toggleGalleryControls(false);
     }
 
     function togglePlay() {
@@ -156,5 +159,9 @@ angular.module('moxieApp')
 
     function cancel() {
       $interval.cancel($scope.galleryInterval);
+    }
+
+    function toggleGalleryControls(show) {
+      vm.showGalleryControls = show;
     }
   });
