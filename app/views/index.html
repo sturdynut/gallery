@@ -4,7 +4,7 @@
     <div class='artist'>
       <img class='arting-logo' src='images/moxie_logo.png' alt='Moxie Cat Logo' />
       <div class='artist-name'>MoxiE</div>
-      <div class='artist-tagline' data-in-effect='fadeIn' data-out-effect='fadeOut'>Life Death Art</div>
+      <div class='artist-tagline' data-in-effect='wobble' data-out-effect='wobble'>Please stand by...</div>
     </div>
   </div>
 </section>
@@ -78,13 +78,78 @@
       </div>
     </li>
   </ul>
-  <div class='gallery-controls'>
+  <div class='gallery-controls'
+    data-ng-class='{ "gallery-controls--expanded": ic.showGalleryControls }'>
+    <button type='button'
+      class='btn-gallery-navigation'
+      data-ng-click='ic.toggleGalleryControls(true);'>
+      <span>View Gallery</span>
+    </button>
+    <button type='button'
+      class='btn-gallery-close'
+      data-ng-click='ic.toggleGalleryControls(false);'>
+      <span>Close</span>
+    </button>
     <ul class='gallery-mini'>
       <li class='gallery-mini__image'
         data-ng-class='{ "active": ic.isActive(image) }'
-        data-ng-style='ic.getImageThumbnailStyle(image)'
         data-ng-repeat='image in ic.thumb_images | orderBy: "index"'
         data-ng-click='ic.toggleByIndex(image.index)'>
+        <div class='gallery-mini__image__flipper'>
+          <div class='gallery-mini__image__front' data-ng-style='ic.getImageThumbnailStyle(image)'></div>
+          <div class='gallery-mini__image__back'>
+            <div class='gallery-mini__image__meta'>
+              <div class='gallery-mini__image__meta__header'>
+                <div class='gallery-mini__image__meta__name'
+                  data-ng-bind='image.name'></div>
+                <div class='gallery-mini__image__meta__description'
+                  data-ng-bind='image.description'></div>
+              </div>
+              <div class='gallery-mini__image__meta__content'>
+                <div class='gallery-mini__image__meta__prints-label'
+                  data-ng-if='image.prints.length > 0 || image.original_for_sale'>
+                  Purchase Options
+                </div>
+                <ul class='gallery-mini__image__meta__prints'>
+                  <li data-ng-repeat='print in image.prints' class='purchase-options'>
+                    <div class='purchase-options__front'>
+                      <div>{{ print.size }}</div>
+                      <div>Print</div>
+                    </div>
+                    <div class='purchase-options__back'>
+                      <a class='btn-link' rel='nofollow'
+                        data-ng-if='print.for_sale'
+                        data-ng-href='print.purchase_url'>
+                        ${{ print.price }}
+                      </a>
+                      <span data-ng-if='!print.for_sale'>
+                        Not for sale, sorry!
+                      </span>
+                    </div>
+                  </li>
+                  <li data-ng-if='image.original_for_sale' class='purchase-options'>
+                    <div class='purchase-options__front'>
+                      <div>{{ image.size }}</div>
+                      <div>Original</div>
+                    </div>
+                    <div class='purchase-options__back'>
+                      <a class='btn-link' rel='nofollow'
+                        data-ng-if='image.original_for_sale && !image.original_sold'
+                        data-ng-href='image.original_purchase_url'>
+                        ${{ image.original_price }}
+                      </a>
+                      <span data-ng-if='image.original_sold'>
+                        SOLD
+                      </span>
+                      <span data-ng-if='!image.original_for_sale'>
+                        Not for sale, sorry!
+                      </span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </div>
       </li>
     </ul>
   </div>

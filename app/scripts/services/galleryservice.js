@@ -185,6 +185,35 @@ angular.module('moxieApp')
           ],
           alignVertically: 'top',
           backgroundSize: 'contain'
+        },
+        {
+          index: 6,
+          path: '/images/gallery/default/native-man.jpg',
+          name: 'Native Man',
+          description: 'A native man with a cross.',
+          size: '36" x 36"',
+          original_for_sale: false,
+          original_sold: false,
+          original_price: 2000.00,
+          original_purchase_url: null,
+          prints: [
+            {
+              size: '48" x 36"',
+              description: 'High Quality Print on Card Stock',
+              price: 300.00,
+              purchase_url: null,
+              for_sale: false
+            },
+            {
+              size: '24" x 18"',
+              description: 'High Quality Print on Card Stock',
+              price: 200.00,
+              purchase_url: null,
+              for_sale: false
+            }
+          ],
+          alignVertically: 'top',
+          backgroundSize: 'contain'
         }
       ];
   });

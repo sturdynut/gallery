@@ -48,6 +48,7 @@
       padding: 5px 10px 0;
       display: block;
 
+      &:active,
       &:hover {
         text-decoration: none;
       }
@@ -58,11 +59,11 @@
     margin: -35px 0 0;
 
     .artist-tagline {
-      font-size: 2.5rem;
+      font-size: 1rem;
       padding: 0;
       opacity: 1;
       letter-spacing: -3px;
-      color: $white;
+      color: $highlight-color-light;
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
@@ -78,9 +79,6 @@
       letter-spacing: -7px;
       line-height: 1;
       margin: 10px 0 40px;
-      background: -webkit-linear-gradient(135deg,$purple 0%,$teal 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
 
       @media screen and (min-width: $tablet-bp) {
         font-size: 10rem;
