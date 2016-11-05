@@ -45,8 +45,11 @@
       color: $white;
       font-size: 4rem;
       line-height: 1;
-      padding: 5px 10px 0;
-      display: block;
+      padding: 10px;
+      width: 0;
+      word-break: break-word;
+      display: inline-flex;
+      text-align: center;
 
       &:active,
       &:hover {

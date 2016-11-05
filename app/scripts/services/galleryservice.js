@@ -23,20 +23,20 @@ angular.module('moxieApp')
           original_price: 3000.00,
           original_purchase_url: null,
           prints: [
-            {
-              size: '48" x 36"',
-              description: 'High Quality Print on Card Stock',
-              price: 300.00,
-              purchase_url: null,
-              for_sale: false
-            },
-            {
-              size: '24" x 18"',
-              description: 'High Quality Print on Card Stock',
-              price: 200.00,
-              purchase_url: null,
-              for_sale: false
-            }
+            // {
+            //   size: '48" x 36"',
+            //   description: 'High Quality Print on Card Stock',
+            //   price: 300.00,
+            //   purchase_url: null,
+            //   for_sale: false
+            // },
+            // {
+            //   size: '24" x 18"',
+            //   description: 'High Quality Print on Card Stock',
+            //   price: 200.00,
+            //   purchase_url: null,
+            //   for_sale: false
+            // }
           ],
           alignVertically: 'top',
           alignHorizontal: 'left'
@@ -52,20 +52,20 @@ angular.module('moxieApp')
           original_price: 6000.00,
           original_purchase_url: null,
           prints: [
-            {
-              size: '48" x 36"',
-              description: 'High Quality Print on Card Stock',
-              price: 300.00,
-              purchase_url: null,
-              for_sale: false
-            },
-            {
-              size: '24" x 18"',
-              description: 'High Quality Print on Card Stock',
-              price: 200.00,
-              purchase_url: null,
-              for_sale: false
-            }
+            // {
+            //   size: '48" x 36"',
+            //   description: 'High Quality Print on Card Stock',
+            //   price: 300.00,
+            //   purchase_url: null,
+            //   for_sale: false
+            // },
+            // {
+            //   size: '24" x 18"',
+            //   description: 'High Quality Print on Card Stock',
+            //   price: 200.00,
+            //   purchase_url: null,
+            //   for_sale: false
+            // }
           ],
           alignVertically: 'top',
           alignHorizontal: 'right'
@@ -81,20 +81,20 @@ angular.module('moxieApp')
           original_price: 2000.00,
           original_purchase_url: null,
           prints: [
-            {
-              size: '48" x 36"',
-              description: 'High Quality Print on Card Stock',
-              price: 300.00,
-              purchase_url: null,
-              for_sale: false
-            },
-            {
-              size: '24" x 18"',
-              description: 'High Quality Print on Card Stock',
-              price: 200.00,
-              purchase_url: null,
-              for_sale: false
-            }
+            // {
+            //   size: '48" x 36"',
+            //   description: 'High Quality Print on Card Stock',
+            //   price: 300.00,
+            //   purchase_url: null,
+            //   for_sale: false
+            // },
+            // {
+            //   size: '24" x 18"',
+            //   description: 'High Quality Print on Card Stock',
+            //   price: 200.00,
+            //   purchase_url: null,
+            //   for_sale: false
+            // }
           ],
           alignVertically: 'top',
           backgroundSize: 'contain'
@@ -110,20 +110,20 @@ angular.module('moxieApp')
           original_price: 2000.00,
           original_purchase_url: null,
           prints: [
-            {
-              size: '48" x 36"',
-              description: 'High Quality Print on Card Stock',
-              price: 300.00,
-              purchase_url: null,
-              for_sale: false
-            },
-            {
-              size: '24" x 18"',
-              description: 'High Quality Print on Card Stock',
-              price: 200.00,
-              purchase_url: null,
-              for_sale: false
-            }
+            // {
+            //   size: '48" x 36"',
+            //   description: 'High Quality Print on Card Stock',
+            //   price: 300.00,
+            //   purchase_url: null,
+            //   for_sale: false
+            // },
+            // {
+            //   size: '24" x 18"',
+            //   description: 'High Quality Print on Card Stock',
+            //   price: 200.00,
+            //   purchase_url: null,
+            //   for_sale: false
+            // }
           ],
           alignVertically: 'top',
           backgroundSize: 'contain'
@@ -139,20 +139,20 @@ angular.module('moxieApp')
           original_price: 2000.00,
           original_purchase_url: null,
           prints: [
-            {
-              size: '48" x 36"',
-              description: 'High Quality Print on Card Stock',
-              price: 300.00,
-              purchase_url: null,
-              for_sale: false
-            },
-            {
-              size: '24" x 18"',
-              description: 'High Quality Print on Card Stock',
-              price: 200.00,
-              purchase_url: null,
-              for_sale: false
-            }
+            // {
+            //   size: '48" x 36"',
+            //   description: 'High Quality Print on Card Stock',
+            //   price: 300.00,
+            //   purchase_url: null,
+            //   for_sale: false
+            // },
+            // {
+            //   size: '24" x 18"',
+            //   description: 'High Quality Print on Card Stock',
+            //   price: 200.00,
+            //   purchase_url: null,
+            //   for_sale: false
+            // }
           ],
           alignVertically: 'top',
           backgroundSize: 'contain'
@@ -168,20 +168,20 @@ angular.module('moxieApp')
           original_price: 2000.00,
           original_purchase_url: null,
           prints: [
-            {
-              size: '48" x 36"',
-              description: 'High Quality Print on Card Stock',
-              price: 300.00,
-              purchase_url: null,
-              for_sale: false
-            },
-            {
-              size: '24" x 18"',
-              description: 'High Quality Print on Card Stock',
-              price: 200.00,
-              purchase_url: null,
-              for_sale: false
-            }
+            // {
+            //   size: '48" x 36"',
+            //   description: 'High Quality Print on Card Stock',
+            //   price: 300.00,
+            //   purchase_url: null,
+            //   for_sale: false
+            // },
+            // {
+            //   size: '24" x 18"',
+            //   description: 'High Quality Print on Card Stock',
+            //   price: 200.00,
+            //   purchase_url: null,
+            //   for_sale: false
+            // }
           ],
           alignVertically: 'top',
           backgroundSize: 'contain'
@@ -197,20 +197,20 @@ angular.module('moxieApp')
           original_price: 2000.00,
           original_purchase_url: null,
           prints: [
-            {
-              size: '48" x 36"',
-              description: 'High Quality Print on Card Stock',
-              price: 300.00,
-              purchase_url: null,
-              for_sale: false
-            },
-            {
-              size: '24" x 18"',
-              description: 'High Quality Print on Card Stock',
-              price: 200.00,
-              purchase_url: null,
-              for_sale: false
-            }
+            // {
+            //   size: '48" x 36"',
+            //   description: 'High Quality Print on Card Stock',
+            //   price: 300.00,
+            //   purchase_url: null,
+            //   for_sale: false
+            // },
+            // {
+            //   size: '24" x 18"',
+            //   description: 'High Quality Print on Card Stock',
+            //   price: 200.00,
+            //   purchase_url: null,
+            //   for_sale: false
+            // }
           ],
           alignVertically: 'top',
           backgroundSize: 'contain'
