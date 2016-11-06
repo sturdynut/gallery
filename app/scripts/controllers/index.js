@@ -11,6 +11,7 @@ angular.module('moxieApp')
   .controller('IndexCtrl', function($scope, $log, $timeout, $interval, GalleryService) {
     var vm = this;
 
+    vm.loadingMessage = 'Please stand by...';
     vm.images         = GalleryService.images;
     vm.thumb_images   = angular.copy(vm.images);
 
@@ -84,7 +85,7 @@ angular.module('moxieApp')
       stop();
       vm.currentIndex = index;
       vm.toggleGalleryControls(false);
-      window.setTimeout(start, 10000);
+      $timeout(start, 10000);
     }
 
     function togglePlay() {
@@ -102,6 +103,15 @@ angular.module('moxieApp')
       });
 
       $timeout(preloadGallery, 1000);
+      $timeout(function() {
+        vm.loadingMessage = 'Still loading images...';
+      }, 60000 * 2);
+      $timeout(function() {
+        vm.loadingMessage = 'Ugh, sorry this is taking so long...';
+      }, 60000 * 4);
+      $timeout(function() {
+        vm.loadingMessage = 'So slooowww, still loading images...';
+      }, 60000 * 6);
     }
 
     function preloadGallery() {
