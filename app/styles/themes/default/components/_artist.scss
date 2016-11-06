@@ -34,19 +34,31 @@
     background-color: transparent;
     border-style: none;
     border-radius: 0;
-    padding: 0;
+    padding: 11px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
 
     @media screen and (max-width: $small-bp) {
       width: 100%;
       text-align: center;
     }
 
+    .artist-logo {
+      width: 66px;
+      height: 53px;
+      opacity: 0.6;
+    }
+
     .artist-name {
-      color: $white;
+      color: rgba(255, 255, 255, 0.6);
+      transition: color 300ms;
       font-size: 4rem;
       line-height: 1;
-      padding: 10px;
-      width: 0;
+      padding: 10px 0;
+      width: 50px;
       word-break: break-word;
       display: inline-flex;
       text-align: center;
@@ -92,9 +104,13 @@
     .artist-logo {
       display: block;
       margin: 0 auto;
-      max-width: 190px;
+      max-width: 280px;
       opacity: 1;
       position: static;
+
+      @media screen and (min-width: $tablet-bp) {
+        max-width: 410px;
+      }
     }
 
     .artist-name,

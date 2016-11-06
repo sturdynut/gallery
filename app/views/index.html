@@ -1,16 +1,17 @@
-<section class='landing-page page page--active'>
+<section class='landing-page page js-page page--active'>
   <div data-ng-include='nav.html'></div>
   <div class='page-content--centered'>
     <div class='artist'>
-      <img class='arting-logo' src='images/moxie_logo.png' alt='Moxie Cat Logo' />
+      <img class='artist-logo' src='images/moxie_logo.png' alt='Moxie Cat Logo' />
       <div class='artist-name'>MoxiE</div>
-      <div class='artist-tagline' data-in-effect='wobble' data-out-effect='wobble'>Please stand by...</div>
     </div>
   </div>
+  <div class='page-loading' data-in-effect='wobble' data-out-effect='wobble'>Please stand by...</div>
 </section>
 <section id='gallery' class='gallery-page page'>
   <div class='artist'>
-    <a href='/#/' class='artist-name'>MoxiE</a>
+    <img class='artist-logo' src='images/moxie_logo.png' alt='Moxie Cat Logo' />
+    <span class='artist-name'>MoxiE</span>
   </div>
   <ul class='gallery'>
     <li data-ng-repeat='image in ic.images'

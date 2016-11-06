@@ -84,6 +84,7 @@ angular.module('moxieApp')
       stop();
       vm.currentIndex = index;
       vm.toggleGalleryControls(false);
+      window.setTimeout(start, 10000);
     }
 
     function togglePlay() {
@@ -146,6 +147,7 @@ angular.module('moxieApp')
     }
 
     function start() {
+      $scope.isPlaying = true;
       $scope.galleryInterval = $interval(function() {
         if ($scope.isPlaying === true) {
           next();

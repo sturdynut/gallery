@@ -1,0 +1,242 @@
+@import '../utils/all';
+
+.site-nav-trigger {
+  cursor: pointer;
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10003;
+  width: 70px;
+  height: 50px;
+  line-height: 0;
+  text-align: center;
+  color: $white;
+  transition: top 50ms;
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+
+  &.active {
+    top: 0;
+  }
+}
+
+/*** Profile ***/
+
+.artist-profile {
+  margin-bottom: auto;
+}
+
+.artist-profile__image {
+  width: 100%;
+}
+
+.artist-profile__about {
+  padding: 40px;
+  color: $black;
+  font-size: 1.4em;
+  line-height: 1.75;
+  text-align: justify;
+}
+
+/*** Hamburger ***/
+
+.hamburger-menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  transition: all 500ms;
+  background-color: transparent;
+  outline: 4px solid transparent;
+
+  .site-nav-trigger.active & {
+    path:nth-child(1) {
+      transform: rotate(51deg);
+      transform-origin: 7px 2px;
+      transition-delay: 75ms;
+    }
+    path:nth-child(2) {
+      transform: translateX(100px);
+      transition: all 200ms;
+    }
+    path:nth-child(3) {
+      transform: rotate(-51deg);
+      transform-origin: 7px 23px;
+      transition-delay: 75ms;
+    }
+
+    transform: rotate(180deg);
+  }
+
+  &:hover path {
+    stroke: $menu-trigger-active-color;
+  }
+
+  path {
+    stroke: $menu-trigger-color;
+    stroke-width: 6px;
+    transition: all 300ms;
+    transform: none;
+
+    .active & {
+      stroke: $menu-trigger-active-color;
+    }
+  }
+}
+
+.site-nav {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  top: 0;
+  right: -9999px;
+  bottom: 0;
+  transition: all 250ms;
+  background-color: $menu-background-color;
+  max-width: 450px;
+  width: 100%;
+  padding: 0;
+  overflow-y: auto;
+
+  @include when-using($tablet) {
+    height: 100%;
+    box-shadow: -4px 0 15px 0px rgba(0, 0, 0, 0.3);
+  }
+
+  &.active {
+    right: 0;
+    z-index: 10000;
+  }
+
+  h3 {
+    font-size: 1rem;
+    padding: 15px 0;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    @include when-using($tablet) {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+.site-nav-pages {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+
+  &.site-nav-pages-work,
+  &.site-nav-pages-channels {
+    flex-direction: row;
+  }
+
+  &.site-nav-pages-info {
+    padding-top: 30px;
+
+    .site-nav-page {
+      margin-bottom: 12px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      a {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .site-nav-info,
+  .site-nav-group-about,
+  .site-nav-page {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .site-nav-group-about {
+    margin-top: 30px;
+  }
+
+  .site-nav-post-meta svg {
+    height: 55px;
+    width: 55px;
+
+    path {
+      fill: $menu-item-background-hover-color;
+    }
+  }
+
+  .site-nav-info {
+    margin-top: auto;
+
+    p {
+      padding: 0 40px 20px;
+      text-align: justify;
+      line-height: 2;
+
+      &:nth-of-type(1) {
+        padding-top: 20px;
+        font-size: 1.2em;
+      }
+    }
+
+    span.keyword {
+      border-bottom: 2px dotted $keyword-color;
+    }
+  }
+}
+
+.site-nav-page {
+  transition: all 300ms;
+
+  .site-nav-pages-work &,
+  .site-nav-pages-channels & {
+    flex: 1;
+
+    &:hover {
+      background-color: $menu-item-background-hover-color;
+
+      a {
+        color: $menu-item-background-color;
+      }
+
+      path {
+        fill: $menu-item-background-color;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: $menu-item-background-hover-color;
+      line-height: 2;
+      padding: 10px 0;
+      font-size: 1rem;
+      text-transform: uppercase;
+
+      @include when-using($tablet) {
+        font-size: 1.2rem;
+        padding: 15px 20px 20px;
+      }
+
+      span:last-child:not(:first-child) {
+        font-size: 0.7em;
+      }
+    }
+  }
+}

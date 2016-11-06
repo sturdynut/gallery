@@ -3,8 +3,22 @@ $white: #fff;
 $purple: #6A2185;
 $teal: #40E1C8;
 
-$highlight-color: $teal;
-$highlight-color-light: lighten($teal, 25%);
-$highlight-color-dark: darken($teal, 25%);
+$primary-color: $teal;
+$secondary-color: $purple;
+$tertiary-color: lighten($primary-color, 25%);
+
+$keyword-color: $primary-color;
+$highlight-color: $primary-color;
+$highlight-color-light: lighten($primary-color, 25%);
+$highlight-color-dark: darken($primary-color, 25%);
 
 $transWhite: transparentize($white, 0.6);
+
+/** Site Menu **/
+$menu-background-color: $tertiary-color;
+$menu-item-color: $white;
+$menu-item-hover-color: $secondary-color;
+$menu-item-background-color: $menu-background-color;
+$menu-item-background-hover-color: $secondary-color;
+$menu-trigger-color: rgba(255, 255, 255, 0.6);
+$menu-trigger-active-color: $secondary-color;

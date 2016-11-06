@@ -42,3 +42,25 @@
   transform: translate(-50%, -50%);
   text-align: center;
 }
+
+.page-loading {
+  font-family: $primaryFont;
+  font-size: 1.2em;
+  padding: 20px;
+  opacity: 1;
+  letter-spacing: 3px;
+  color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  background-color: $highlight-color-light;
+  border-radius: 7px 7px 0 0;
+  text-align: center;
+  width: 90%;
+
+  @media screen and (min-width: $tablet-bp) {
+    font-size: 2rem;
+    width: 400px;
+  }
+}

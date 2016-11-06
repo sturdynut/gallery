@@ -38,8 +38,8 @@ angular.module('moxieApp')
             //   for_sale: false
             // }
           ],
-          alignVertically: 'top',
-          alignHorizontal: 'left'
+          alignVertically: 'center',
+          alignHorizontal: 'center'
         },
         {
           index: 0,
@@ -67,7 +67,7 @@ angular.module('moxieApp')
             //   for_sale: false
             // }
           ],
-          alignVertically: 'top',
+          alignVertically: 'center',
           alignHorizontal: 'right'
         },
         {
@@ -96,8 +96,8 @@ angular.module('moxieApp')
             //   for_sale: false
             // }
           ],
-          alignVertically: 'top',
-          backgroundSize: 'contain'
+          alignVertically: 'center',
+          backgroundSize: 'container'
         },
         {
           index: 3,
@@ -125,8 +125,8 @@ angular.module('moxieApp')
             //   for_sale: false
             // }
           ],
-          alignVertically: 'top',
-          backgroundSize: 'contain'
+          alignVertically: 'center',
+          backgroundSize: 'container'
         },
         {
           index: 4,
@@ -154,8 +154,8 @@ angular.module('moxieApp')
             //   for_sale: false
             // }
           ],
-          alignVertically: 'top',
-          backgroundSize: 'contain'
+          alignVertically: 'center',
+          backgroundSize: 'container'
         },
         {
           index: 5,
@@ -183,8 +183,8 @@ angular.module('moxieApp')
             //   for_sale: false
             // }
           ],
-          alignVertically: 'top',
-          backgroundSize: 'contain'
+          alignVertically: 'center',
+          backgroundSize: 'container'
         },
         {
           index: 6,
@@ -213,7 +213,7 @@ angular.module('moxieApp')
             // }
           ],
           alignVertically: 'top',
-          backgroundSize: 'contain'
+          backgroundSize: 'container'
         }
       ];
   });
