@@ -38,7 +38,7 @@ angular.module('moxieApp')
             //   for_sale: false
             // }
           ],
-          alignVertically: 'center',
+          alignVertically: 'top',
           alignHorizontal: 'center'
         },
         {
@@ -67,7 +67,7 @@ angular.module('moxieApp')
             //   for_sale: false
             // }
           ],
-          alignVertically: 'center',
+          alignVertically: 'top',
           alignHorizontal: 'right'
         },
         {
