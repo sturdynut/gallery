@@ -44,6 +44,10 @@
     background: -ms-linear-gradient(45deg, rgba(64,225,200,1) 0%, rgba(106,33,133,1) 100%);
     background: linear-gradient(45deg, rgba(64,225,200,1) 0%, rgba(106,33,133,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6a2185', endColorstr='#40e1c8', GradientType=1 );
+
+    @media screen and (max-width: $small-bp) {
+      height: 100vh;
+    }
   }
 
   > section {
