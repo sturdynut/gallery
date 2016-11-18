@@ -66,14 +66,17 @@ h1 {
 
 .site-footer {
   background-color: $black;
-  bottom: -40px;
   color: $transWhite;
   font-weight: $thinFont;
   font-size: 0.6em;
-  left: 0;
-  right: 0;
   padding: 10px;
-  position: absolute;
   font-size: 1.4rem;
   z-index: 500;
+
+  @media screen and (min-width: $big-bp) {
+    bottom: -40px;
+    left: 0;
+    right: 0;
+    position: absolute;
+  }
 }

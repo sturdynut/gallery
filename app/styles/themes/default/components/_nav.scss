@@ -6,12 +6,12 @@
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 10003;
+  z-index: 1500;
   width: 70px;
   height: 50px;
   line-height: 0;
   text-align: center;
-  color: $white;
+  color: $primary-color;
   transition: top 50ms;
 
   &:hover,
@@ -32,14 +32,30 @@
 
 .artist-profile__image {
   width: 100%;
+  background-image: url('../../../../images/lindsey.jpg');
+  background-position: top left;
+  height: 250px;
+  background-size: cover;
 }
 
 .artist-profile__about {
-  padding: 40px;
-  color: $black;
+  padding: 30px 40px;
+  color: darken($primary-color, 35%);
   font-size: 1.4em;
   line-height: 1.75;
   text-align: justify;
+  position: relative;
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    top: -12px;
+    left: 0;
+    right: -40px;
+    height: 25px;
+    background-color: $menu-background-color;
+    transform: rotate(-3deg);
+  }
 }
 
 /*** Hamburger ***/
@@ -79,7 +95,7 @@
   path {
     stroke: $menu-trigger-color;
     stroke-width: 6px;
-    transition: all 300ms;
+    transition: all 500ms;
     transform: none;
 
     .active & {
@@ -92,7 +108,7 @@
   position: fixed;
   display: flex;
   flex-direction: column;
-  z-index: 1000;
+  z-index: 500;
   top: 0;
   right: -9999px;
   bottom: 0;
@@ -110,7 +126,7 @@
 
   &.active {
     right: 0;
-    z-index: 10000;
+    z-index: 1000;
   }
 
   h3 {
@@ -171,7 +187,8 @@
     width: 55px;
 
     path {
-      fill: $menu-item-background-hover-color;
+      transition: fill 1s;
+      fill: darken($primary-color, 25%);
     }
   }
 
@@ -196,21 +213,18 @@
 }
 
 .site-nav-page {
-  transition: all 300ms;
-
   .site-nav-pages-work &,
   .site-nav-pages-channels & {
     flex: 1;
 
     &:hover {
-      background-color: $menu-item-background-hover-color;
-
       a {
-        color: $menu-item-background-color;
+        text-decoration: none;
+        color: $menu-item-background-hover-color;
       }
 
       path {
-        fill: $menu-item-background-color;
+        fill: $menu-item-background-hover-color;
       }
     }
 
@@ -223,11 +237,12 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      color: $menu-item-background-hover-color;
+      color: darken($primary-color, 25%);
       line-height: 2;
       padding: 10px 0;
       font-size: 1rem;
       text-transform: uppercase;
+      transition: color 1s;
 
       @include when-using($tablet) {
         font-size: 1.2rem;

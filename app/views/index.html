@@ -2,15 +2,16 @@
   <div data-ng-include='nav.html'></div>
   <div class='page-content--centered'>
     <div class='artist'>
-      <img class='artist-logo' src='images/moxie_logo.png' alt='Moxie Cat Logo' />
+      <img class='artist-logo' src='images/moxie_logo.png' alt='Moxie' />
       <div class='artist-name'>MoxiE</div>
     </div>
+    <div class='page-loading-message'>Please stand by...</div>
   </div>
-  <div class='page-loading' data-in-effect='wobble' data-out-effect='wobble' data-ng-bind='ic.loadingMessage'></div>
 </section>
-<section id='gallery' class='gallery-page page'>
+<section id='gallery' class='gallery-page page' 
+  data-ng-class='{ "gallery-page--mobile": ic.isMobile() }'>
   <div class='artist'>
-    <img class='artist-logo' src='images/moxie_logo.png' alt='Moxie Cat Logo' />
+    <img class='artist-logo' src='images/moxie_logo_black.png' alt='Moxie' />
     <span class='artist-name'>MoxiE</span>
   </div>
   <ul class='gallery'>
@@ -79,16 +80,30 @@
       </div>
     </li>
   </ul>
-  <div class='gallery-controls'
-    data-ng-class='{ "gallery-controls--expanded": ic.showGalleryControls }'>
+  <nav class='gallery-controls'>
+    <button type='button' class='btn-arrow-previous' title='Previous' data-ng-click='ic.prev(true);'>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm2 12l-4.5 4.5 1.527 1.5 5.973-6-5.973-6-1.527 1.5 4.5 4.5z"/></svg>
+    </button>
+    <button type='button' class='btn-arrow-stop' title='Stop' data-ng-click='ic.stop();' data-ng-show='!ic.isStopped()'>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 2c1.654 0 3 1.346 3 3v14c0 1.654-1.346 3-3 3h-14c-1.654 0-3-1.346-3-3v-14c0-1.654 1.346-3 3-3h14zm0-2h-14c-2.762 0-5 2.239-5 5v14c0 2.761 2.238 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5z"/></svg>
+    </button>
+    <button type='button' class='btn-arrow-start' title='Start' data-ng-click='ic.start();' data-ng-show='ic.isStopped()'>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-3 17v-10l9 5.146-9 4.854z"/></svg>
+    </button>
+    <button type='button' class='btn-arrow-next' title='Next' data-ng-click='ic.next(true);'>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm2 12l-4.5 4.5 1.527 1.5 5.973-6-5.973-6-1.527 1.5 4.5 4.5z"/></svg>
+    </button>
+  </nav>
+  <div class='gallery-grid'
+    data-ng-class='{ "gallery-grid--expanded": ic.showGalleryGrid }'>
     <button type='button'
       class='btn-gallery-navigation'
-      data-ng-click='ic.toggleGalleryControls(true);'>
+      data-ng-click='ic.toggleGalleryGrid(true);this.blur();'>
       <span>View Gallery</span>
     </button>
     <button type='button'
       class='btn-gallery-close'
-      data-ng-click='ic.toggleGalleryControls(false);'>
+      data-ng-click='ic.toggleGalleryGrid(false);'>
       <span>Close</span>
     </button>
     <ul class='gallery-mini'>

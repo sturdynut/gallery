@@ -39,7 +39,8 @@ angular.module('moxieApp')
             // }
           ],
           alignVertically: 'top',
-          alignHorizontal: 'center'
+          alignHorizontal: 'center',
+          backgroundSize: 'contain'
         },
         {
           index: 0,
@@ -67,8 +68,9 @@ angular.module('moxieApp')
             //   for_sale: false
             // }
           ],
-          alignVertically: 'top',
-          alignHorizontal: 'right'
+          alignVertically: 'center',
+          alignHorizontal: 'center',
+          backgroundSize: 'contain'
         },
         {
           index: 1,
@@ -97,7 +99,7 @@ angular.module('moxieApp')
             // }
           ],
           alignVertically: 'center',
-          backgroundSize: 'container'
+          backgroundSize: 'contain'
         },
         {
           index: 3,
@@ -125,6 +127,7 @@ angular.module('moxieApp')
             //   for_sale: false
             // }
           ],
+          alignHorizontal: 'top',
           alignVertically: 'center',
           backgroundSize: 'container'
         },
@@ -155,7 +158,7 @@ angular.module('moxieApp')
             // }
           ],
           alignVertically: 'center',
-          backgroundSize: 'container'
+          backgroundSize: 'contain'
         },
         {
           index: 5,
@@ -184,7 +187,7 @@ angular.module('moxieApp')
             // }
           ],
           alignVertically: 'center',
-          backgroundSize: 'container'
+          backgroundSize: 'contain'
         },
         {
           index: 6,
@@ -213,7 +216,65 @@ angular.module('moxieApp')
             // }
           ],
           alignVertically: 'top',
-          backgroundSize: 'container'
+          backgroundSize: 'contain'
+        },
+        {
+          index: 7,
+          path: '/images/gallery/default/egg-carving-1.jpg',
+          name: 'Ostrich Egg Carving',
+          description: 'A carving of a woman on an ostrich egg.',
+          size: '36" x 36"',
+          original_for_sale: false,
+          original_sold: false,
+          original_price: 2000.00,
+          original_purchase_url: null,
+          prints: [
+            // {
+            //   size: '48" x 36"',
+            //   description: 'High Quality Print on Card Stock',
+            //   price: 300.00,
+            //   purchase_url: null,
+            //   for_sale: false
+            // },
+            // {
+            //   size: '24" x 18"',
+            //   description: 'High Quality Print on Card Stock',
+            //   price: 200.00,
+            //   purchase_url: null,
+            //   for_sale: false
+            // }
+          ],
+          alignVertically: 'center',
+          backgroundSize: 'contain'
+        },
+        {
+          index: 8,
+          path: '/images/gallery/default/egg-carving-2.jpg',
+          name: 'Ostrich Egg Carving',
+          description: 'A carving of a woman on an ostrich egg.',
+          size: '36" x 36"',
+          original_for_sale: false,
+          original_sold: false,
+          original_price: 2000.00,
+          original_purchase_url: null,
+          prints: [
+            // {
+            //   size: '48" x 36"',
+            //   description: 'High Quality Print on Card Stock',
+            //   price: 300.00,
+            //   purchase_url: null,
+            //   for_sale: false
+            // },
+            // {
+            //   size: '24" x 18"',
+            //   description: 'High Quality Print on Card Stock',
+            //   price: 200.00,
+            //   purchase_url: null,
+            //   for_sale: false
+            // }
+          ],
+          alignVertically: 'center',
+          backgroundSize: 'contain'
         }
       ];
   });

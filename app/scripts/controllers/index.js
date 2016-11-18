@@ -8,29 +8,30 @@
  * Controller of the moxieApp
  */
 angular.module('moxieApp')
-  .controller('IndexCtrl', function($scope, $log, $timeout, $interval, GalleryService) {
+  .controller('IndexCtrl', function($scope, $log, $timeout, $interval, $window, GalleryService) {
     var vm = this;
-
-    vm.loadingMessage = 'Please stand by...';
-    vm.images         = GalleryService.images;
-    vm.thumb_images   = angular.copy(vm.images);
 
     $scope.pageClass  = 'page-index';
     $scope.isPlaying  = true;
 
+    vm.images         = GalleryService.images;
+    vm.thumb_images   = angular.copy(vm.images);
     vm.startIndex     = 0;
     vm.frequency      = 6000;
     vm.maxLength      = vm.images.length;
-    vm.showGalleryControls = false;
-
+    vm.showGalleryGrid = true;
     vm.getImageStyle            = getImageStyle;
     vm.getImageThumbnailStyle   = getImageThumbnailStyle;
     vm.toggleByIndex            = toggleByIndex;
-    vm.togglePlay               = togglePlay;
     vm.isActive                 = isActive;
     vm.next                     = next;
     vm.prev                     = prev;
-    vm.toggleGalleryControls    = toggleGalleryControls;
+    vm.stop                     = stop;
+    vm.start                    = start;
+    vm.onKey                    = onKey;
+    vm.isMobile                 = isMobile;
+    vm.isStopped                = isStopped;
+    vm.toggleGalleryGrid    = toggleGalleryGrid;
 
     init();
 
@@ -84,34 +85,37 @@ angular.module('moxieApp')
     function toggleByIndex(index) {
       stop();
       vm.currentIndex = index;
-      vm.toggleGalleryControls(false);
+      vm.toggleGalleryGrid(false);
       $timeout(start, 10000);
     }
 
-    function togglePlay() {
-      $scope.isPlaying = !$scope.isPlaying;
+    function isMobile() {
+      return window.innerWidth < 481;
+    }
+
+    function onKey(event) {
+      if (event.keyCode === 37) {
+        this.prev();
+      }
+
+      if (event.keyCode === 39) {
+        this.next();
+      }
     }
 
     // Private
 
     function init() {
       $(function() {
-        $('[data-in-effect]').textillate({
+        $('.page-loading-message').textillate({
+          in: { effect: 'wobble' },
+          out: { effect: 'wobble' },
           loop: true,
           autoStart: true
         });
       });
 
       $timeout(preloadGallery, 1000);
-      $timeout(function() {
-        vm.loadingMessage = 'Still loading images...';
-      }, 60000 * 2);
-      $timeout(function() {
-        vm.loadingMessage = 'Ugh, sorry this is taking so long...';
-      }, 60000 * 4);
-      $timeout(function() {
-        vm.loadingMessage = 'So slooowww, still loading images...';
-      }, 60000 * 6);
     }
 
     function preloadGallery() {
@@ -119,13 +123,30 @@ angular.module('moxieApp')
         $('.gallery__image').imagesLoaded({
           background: true
         }, function(imagesLoaded) {
-          $log.info('sturdynut:', 'Done loading gallery images.  Count: ' + imagesLoaded.images.length);
+          $log.info('gallery:', 'Done loading gallery images.  Count: ' + imagesLoaded.images.length);
+
+          angular.element($window)
+            .on('resize', function() {
+              if (vm.isMobile() && !isStopped()) {
+                stop();
+              }
+            })
+            .on('keydown', function(event) {
+              $scope.$apply(function() {
+                stop();
+                vm.onKey(event);
+              });
+            });
 
           $timeout(function() {
-            $('.landing-page').toggleClass('page--active');
-            $('.gallery-page').toggleClass('page--active');
+            $('.landing-page').fadeOut(function() {
+              $('.gallery-page').toggleClass('page--active');
+            }).toggleClass('page--active');
+            
             vm.currentIndex = vm.startIndex;
-            start();
+            if (!vm.isMobile()) {
+              start();
+            }
             vm.isImagesLoaded = true;
 
             $scope.$apply();
@@ -135,6 +156,7 @@ angular.module('moxieApp')
     }
 
     function prev(stopGallery) {
+      $log.info('prev called...', stopGallery);
       if (!_.isUndefined(stopGallery) && stopGallery === true) {
         stop();
       }
@@ -146,6 +168,7 @@ angular.module('moxieApp')
     }
 
     function next(stopGallery) {
+      $log.info('next called...', stopGallery);
       if (!_.isUndefined(stopGallery) && stopGallery === true) {
         stop();
       }
@@ -158,22 +181,19 @@ angular.module('moxieApp')
 
     function start() {
       $scope.isPlaying = true;
-      $scope.galleryInterval = $interval(function() {
-        if ($scope.isPlaying === true) {
-          next();
-        }
-      }, vm.frequency, 0, true);
+      $scope.galleryInterval = $interval(next, vm.frequency, 0, true);
     }
 
     function stop() {
       $scope.isPlaying = false;
-    }
-
-    function cancel() {
       $interval.cancel($scope.galleryInterval);
     }
 
-    function toggleGalleryControls(show) {
-      vm.showGalleryControls = show;
+    function isStopped() {
+      return $scope.isPlaying === false;
+    }
+
+    function toggleGalleryGrid(show) {
+      vm.showGalleryGrid = show;
     }
   });

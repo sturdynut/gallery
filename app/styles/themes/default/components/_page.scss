@@ -1,27 +1,48 @@
+.page-container {
+  @media screen and (max-width: $small-bp) {
+    position: relative;
+    height: 100vh;
+  }
+}
+
 .page {
-  background: $black;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  opacity: 0;
+  background: $white;
   transition: opacity 2s;
-  overflow: hidden;
+  opacity: 0;
+  z-index: 1;
+  position: relative;
+  
+  @media screen and (max-width: $small-bp) {
+    display: none;
+  }
+
+  @media screen and (min-width: $big-bp) {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+  }
 
   &.page--active {
     opacity: 1;
+    z-index: 100;
+
+    @media screen and (max-width: $small-bp) {
+      display: block;
+    }
   }
 
   &.landing-page {
-    background: rgba(106,33,133,1);
-    background: -moz-linear-gradient(45deg, rgba(106,33,133,1) 0%, rgba(64,225,200,1) 100%);
-    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(106,33,133,1)), color-stop(100%, rgba(64,225,200,1)));
-    background: -webkit-linear-gradient(45deg, rgba(106,33,133,1) 0%, rgba(64,225,200,1) 100%);
-    background: -o-linear-gradient(45deg, rgba(106,33,133,1) 0%, rgba(64,225,200,1) 100%);
-    background: -ms-linear-gradient(45deg, rgba(106,33,133,1) 0%, rgba(64,225,200,1) 100%);
-    background: linear-gradient(45deg, rgba(106,33,133,1) 0%, rgba(64,225,200,1) 100%);
+    background: rgba(64,225,200,1);
+    background: -moz-linear-gradient(45deg, rgba(64,225,200,1) 0%, rgba(106,33,133,1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(64,225,200,1)), color-stop(100%, rgba(106,33,133,1)));
+    background: -webkit-linear-gradient(45deg, rgba(64,225,200,1) 0%, rgba(106,33,133,1) 100%);
+    background: -o-linear-gradient(45deg, rgba(64,225,200,1) 0%, rgba(106,33,133,1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(64,225,200,1) 0%, rgba(106,33,133,1) 100%);
+    background: linear-gradient(45deg, rgba(64,225,200,1) 0%, rgba(106,33,133,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6a2185', endColorstr='#40e1c8', GradientType=1 );
   }
 
@@ -43,24 +64,15 @@
   text-align: center;
 }
 
-.page-loading {
+.page-loading-message {
   font-family: $primaryFont;
   font-size: 1.2em;
-  padding: 20px;
-  opacity: 1;
   letter-spacing: 3px;
-  color: rgba(0, 0, 0, 0.6);
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 0;
-  background-color: $highlight-color-light;
-  border-radius: 7px 7px 0 0;
+  color: $highlight-color-light;
   text-align: center;
-  width: 90%;
+  padding: 40px 0 20px;
 
-  @media screen and (min-width: $tablet-bp) {
+  @media screen and (min-width: $big-bp) {
     font-size: 2rem;
-    max-width: 600px;
   }
 }

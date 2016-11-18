@@ -29,6 +29,19 @@ $gallery-controls-height: 100px;
   }
 }
 
+.gallery {
+  @media screen and (max-width: $small-bp) {
+    display: flex;
+    flex-direction: column;
+
+    & > li {
+      flex: 1;
+      height: 25vh;
+      width: 100%;
+    }
+  }
+}
+
 .gallery-mini {
   display: flex;
   flex-direction: row;
@@ -53,21 +66,17 @@ $gallery-controls-height: 100px;
 }
 
 .gallery__image {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: none;
   background-size: contain;
   background-position: center center;
   z-index: 1;
 
   @media screen and (min-width: $big-bp) {
-    top: 90px;
-    bottom: 190px;
+    position: absolute;
+    top: 80px;
+    bottom: 185px;
     left: 60px;
     right: 60px;
+    display: none;
 
     .active & {
       display: block;
@@ -75,10 +84,8 @@ $gallery-controls-height: 100px;
   }
 
   @media screen and (max-width: $small-bp) {
-    .active & {
-      display: block;
-      top: 57px;
-    }
+    height: 100%;
+    background-size: cover !important;
   }
 }
 
@@ -87,7 +94,7 @@ $gallery-controls-height: 100px;
   flex-basis: auto;
   flex-grow: 1;
   align-self: stretch;
-  transition: transform 300ms;
+  transition: transform 300ms cubic-bezier(0, 0, 0.2, 1);
   perspective: 1000px;
 
   &::after {
@@ -96,7 +103,7 @@ $gallery-controls-height: 100px;
     text-transform: opacity 300ms ease-in-out;
   }
 
-  .gallery-controls--expanded &:hover {
+  .gallery-grid--expanded &:hover {
     @media screen and (min-width: $big-bp) {
       &::after {
         opacity: 1;
@@ -105,7 +112,7 @@ $gallery-controls-height: 100px;
   }
 
   .gallery-mini__image__flipper {
-    transition: 500ms;
+    transition: transform 300ms linear;
     transition-delay: 100ms;
     transform-style: preserve-3d;
     position: absolute;
@@ -115,7 +122,7 @@ $gallery-controls-height: 100px;
     left: 0;
   }
 
-  .gallery-controls--expanded &:hover .gallery-mini__image__flipper {
+  .gallery-grid--expanded &:hover .gallery-mini__image__flipper {
     transform: rotateX(180deg);
   }
 
@@ -127,7 +134,10 @@ $gallery-controls-height: 100px;
     bottom: 0;
     left: 0;
     z-index: 10;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    // http://stackoverflow.com/questions/27342270/css-3d-transforms-in-safari
+    transition: transform 300ms linear;
   }
 
   .gallery-mini__image__front {
@@ -195,18 +205,18 @@ $gallery-controls-height: 100px;
       border-left-style: none;
       border-right-style: none;
 
-      .gallery-controls:not(:hover) & {
+      .gallery-grid:not(:hover) & {
         color: rgba(0, 0, 0, 0.9);
       }
     }
   }
 }
 
-.gallery-controls {
+.gallery-grid {
   display: flex;
   position: absolute;
   top: -30px;
-  z-index: 100;
+  z-index: 500;
   right: 0;
   height: $gallery-controls-height;
   transition:
@@ -217,23 +227,23 @@ $gallery-controls-height: 100px;
     ;
 
   @media screen and (max-width: $small-bp) {
-    left: 0;
+    display: none;
   }
 
   @media screen and (min-width: $big-bp) {
     left: 50%;
     width: 200px;
     transform: translateX(-50%);
-    border: 8px solid rgba(255, 255, 255, 0.2);
+    border: 8px solid rgba(64, 255, 200, 0.2);
     border-top: none;
     border-radius: 0 0 7px 7px;
 
-    &:not(.gallery-controls--expanded):hover {
-      border-color: rgba(255, 255, 255, 0.9);
+    &:not(.gallery-grid--expanded):hover {
+      border-color: rgba(64, 255, 200, 0.9);
       top: 0;
     }
 
-    &.gallery-controls--expanded {
+    &.gallery-grid--expanded {
       height: 100vh;
       width: 100%;
       border-radius: 0;
@@ -260,7 +270,7 @@ $gallery-controls-height: 100px;
     transition: background-color 150ms,
       color 150ms;
 
-    .gallery-controls:hover &,
+    .gallery-grid:hover &,
     &:hover {
       background-color: $highlight-color-dark;
       color: $white;
@@ -288,15 +298,16 @@ $gallery-controls-height: 100px;
   background-color: $white;
   z-index: 2;
   display: none;
+  
 
   .active & {
     display: flex;
   }
 
   @media screen and (min-width: $big-bp) {
-    padding: $default-gutters;
-    height: 140px;
-    bottom: 0;
+    padding: $default-gutters $default-gutters 0;
+    height: 130px;
+    bottom: 55px;
   }
 
   @media screen and (max-width: $small-bp) {
@@ -337,6 +348,55 @@ $gallery-controls-height: 100px;
   }
 }
 
+.gallery-controls {
+  position: absolute;
+  left: 50%;
+  bottom: 15px;
+  opacity: 0.2;
+  transition: opacity 500ms;
+  transform: translateX(-50%);
+  z-index: 400;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  .btn-arrow-start,
+  .btn-arrow-stop,
+  .btn-arrow-previous,
+  .btn-arrow-next {
+    border-style: none;
+    background-image: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+
+    svg {
+      height: 36px;
+      width: 36px;
+    }
+
+    &:hover path {
+      fill: $menu-trigger-active-color;
+    }
+
+    path {
+      transition: fill 300ms;
+      fill: $menu-trigger-color;
+    }
+  }
+
+  .btn-arrow-previous {
+    margin-right: 8px;
+  }
+  .btn-arrow-next {
+    margin-left: 8px;
+  }
+
+  .btn-arrow-previous svg {
+    transform: rotate(180deg);
+  }
+}
 .gallery-image-meta__name {
   padding: $default-gutters 0 6px 0;
   font-size: 3.0rem;
@@ -381,7 +441,7 @@ $gallery-controls-height: 100px;
     border-left-style: none;
     border-right-style: none;
 
-    .gallery-controls:not(:hover) & {
+    .gallery-grid:not(:hover) & {
       color: rgba(0, 0, 0, 0.9);
     }
   }
@@ -557,7 +617,7 @@ $gallery-controls-height: 100px;
     border-color: $white;
   }
 
-  .gallery-controls--expanded & {
+  .gallery-grid--expanded & {
     display: block;
   }
 }
@@ -576,7 +636,7 @@ $gallery-controls-height: 100px;
   background: transparent;
   z-index: 200;
 
-  .gallery-controls--expanded & {
+  .gallery-grid--expanded & {
     display: none;
   }
 
