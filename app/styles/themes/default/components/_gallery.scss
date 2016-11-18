@@ -16,7 +16,10 @@ $gallery-controls-height: 100px;
 .gallery-mini {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  
+  @media screen and (min-width: $big-bp) {
+    overflow: hidden;
+  }
 
   > li {
     list-style: none;
@@ -36,7 +39,7 @@ $gallery-controls-height: 100px;
 
     & > li {
       flex: 1;
-      height: 25vh;
+      height: 33.357vh;
       width: 100%;
     }
   }

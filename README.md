@@ -1,11 +1,15 @@
-# web
+# Gallery
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.12.1.
+A gallery to showcase art.
 
 ## Build & development
 
-Run `grunt` for building and `grunt serve` for preview.
+Run `grunt build` for building and `grunt serve` for dev.
+
+## Deployment to Heroku
+
+1. `grunt build` to build out /dist (update stupid js file paths with heroku url)
+2. Deploy from heroku!
 
 ## Testing
 
