@@ -16,6 +16,7 @@ angular.module('moxieApp')
 
     vm.images         = GalleryService.images;
     vm.thumb_images   = angular.copy(vm.images);
+    vm.started        = false;
     vm.startIndex     = 0;
     vm.frequency      = 6000;
     vm.maxLength      = vm.images.length;
@@ -26,12 +27,15 @@ angular.module('moxieApp')
     vm.isActive                 = isActive;
     vm.next                     = next;
     vm.prev                     = prev;
+    vm.onPrevClick                     = onPrevClick;
+    vm.onNextClick                     = onNextClick;
     vm.stop                     = stop;
     vm.start                    = start;
     vm.onKey                    = onKey;
     vm.isMobile                 = isMobile;
     vm.isStopped                = isStopped;
     vm.toggleGalleryGrid    = toggleGalleryGrid;
+    vm.toggleFullscreen     = toggleFullscreen;
 
     init();
 
@@ -155,11 +159,32 @@ angular.module('moxieApp')
       }
     }
 
+    function onPrevClick() {
+      stop();
+      
+      resetFullscreen();
+
+      var index = vm.currentIndex;
+      vm.currentIndex = 0 === index ?
+        vm.maxLength - 1
+        : index - 1;
+    }
+
+    function onNextClick() {
+      stop();
+      
+      resetFullscreen();
+
+      var index = vm.currentIndex;
+      vm.currentIndex = vm.maxLength === index + 1 ?
+        vm.startIndex
+        : index + 1;
+    }
+
     function prev(stopGallery) {
-      $log.info('prev called...', stopGallery);
-      if (!_.isUndefined(stopGallery) && stopGallery === true) {
-        stop();
-      }
+      if (isStopped()) { return; }
+
+      resetFullscreen();
 
       var index = vm.currentIndex;
       vm.currentIndex = 0 === index ?
@@ -168,10 +193,9 @@ angular.module('moxieApp')
     }
 
     function next(stopGallery) {
-      $log.info('next called...', stopGallery);
-      if (!_.isUndefined(stopGallery) && stopGallery === true) {
-        stop();
-      }
+      if (isStopped()) { return; }
+
+      resetFullscreen();
 
       var index = vm.currentIndex;
       vm.currentIndex = vm.maxLength === index + 1 ?
@@ -181,12 +205,14 @@ angular.module('moxieApp')
 
     function start() {
       $scope.isPlaying = true;
-      $scope.galleryInterval = $interval(next, vm.frequency, 0, true);
+
+      if (!$scope.galleryInterval) {
+        $scope.galleryInterval = $interval(next, vm.frequency, 0, true);
+      }
     }
 
     function stop() {
       $scope.isPlaying = false;
-      $interval.cancel($scope.galleryInterval);
     }
 
     function isStopped() {
@@ -195,5 +221,16 @@ angular.module('moxieApp')
 
     function toggleGalleryGrid(show) {
       vm.showGalleryGrid = show;
+    }
+
+    function toggleFullscreen(image) {
+      image.fs = !image.fs;
+      stop();
+    }
+
+    function resetFullscreen() {
+      _.each(vm.images, function(image) {
+        image.fs = false;
+      });
     }
   });

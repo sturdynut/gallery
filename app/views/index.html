@@ -19,10 +19,13 @@
       data-ng-class='{ "active": ic.isActive(image) }'>
       <div class='gallery__image'
       data-ng-style='ic.getImageStyle(image)'
-      data-ng-swipe-up='ic.next(true);'
-      data-ng-swipe-down='ic.prev(true);'
-      data-ng-swipe-left='ic.prev(true);'
-      data-ng-swipe-right='ic.next(true);'></div>
+      data-ng-class='{"gallery__image--fs" : image.fs === true}'
+      data-ng-swipe-up='ic.onNextClick();'
+      data-ng-swipe-down='ic.onPrevClick();'
+      data-ng-swipe-left='ic.onPrevClick();'
+      data-ng-swipe-right='ic.onNextClick();'>
+        <button class='gallery__image__fstoggle' data-ng-click='ic.toggleFullscreen(image)'></button>
+      </div>
       <div class='gallery-image-meta'>
         <div class='gallery-image-meta__header'>
           <div class='gallery-image-meta__name'
@@ -81,7 +84,7 @@
     </li>
   </ul>
   <nav class='gallery-controls'>
-    <button type='button' class='btn-arrow-previous' title='Previous' data-ng-click='ic.prev(true);'>
+    <button type='button' class='btn-arrow-previous' title='Previous' data-ng-click='ic.onPrevClick();'>
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm2 12l-4.5 4.5 1.527 1.5 5.973-6-5.973-6-1.527 1.5 4.5 4.5z"/></svg>
     </button>
     <button type='button' class='btn-arrow-stop' title='Stop' data-ng-click='ic.stop();' data-ng-show='!ic.isStopped()'>
@@ -90,7 +93,7 @@
     <button type='button' class='btn-arrow-start' title='Start' data-ng-click='ic.start();' data-ng-show='ic.isStopped()'>
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-3 17v-10l9 5.146-9 4.854z"/></svg>
     </button>
-    <button type='button' class='btn-arrow-next' title='Next' data-ng-click='ic.next(true);'>
+    <button type='button' class='btn-arrow-next' title='Next' data-ng-click='ic.onNextClick();'>
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm2 12l-4.5 4.5 1.527 1.5 5.973-6-5.973-6-1.527 1.5 4.5 4.5z"/></svg>
     </button>
   </nav>

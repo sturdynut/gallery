@@ -21,4 +21,4 @@ $menu-item-hover-color: $secondary-color;
 $menu-item-background-color: $menu-background-color;
 $menu-item-background-hover-color: $secondary-color;
 $menu-trigger-color: $primary-color;
-$menu-trigger-active-color: $secondary-color;
+$menu-trigger-active-color: darken($primary-color, 25%);
