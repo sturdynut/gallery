@@ -2,6 +2,9 @@
 
 A gallery to showcase art.
 
+View live site here: 
+[moxieart.studio](moxieart.studio)
+
 ## Build & development
 
 Run `grunt build` for building and `grunt serve` for dev.
